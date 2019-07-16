@@ -11,7 +11,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
         if (expense.id === action.id) {
           return {
             ...expense,
-            ...action.update // overriden the expense items with the action updates icons
+            ...action.update // overriden the expense items with the action updates items
           };
         } else {
           return expense;

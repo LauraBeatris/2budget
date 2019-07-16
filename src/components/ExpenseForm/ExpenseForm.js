@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
+import { FormContainer } from "./styles";
 
 export default class ExpenseForm extends Component {
   constructor(props) {
@@ -74,21 +75,30 @@ export default class ExpenseForm extends Component {
 
   render() {
     return (
-      <div>
+      <FormContainer>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            placeholder="description"
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-            autoFocus
-          />
-          <input
-            type="number"
-            placeholder="amount"
-            value={this.state.amount}
-            onChange={this.onAmountChange}
+          <div className="description-amount">
+            <input
+              type="text"
+              placeholder="Type a description"
+              value={this.state.description}
+              onChange={this.onDescriptionChange}
+              autoFocus
+            />
+            <input
+              type="number"
+              placeholder="amount"
+              value={this.state.amount}
+              onChange={this.onAmountChange}
+            />
+          </div>
+          <textarea
+            placeholder="Add a note for your expense (optional)"
+            value={this.state.rent}
+            onChange={this.onTextAreaChange}
+            className="note"
+            rows="2"
           />
           <SingleDatePicker
             date={this.state.createdAt}
@@ -98,14 +108,10 @@ export default class ExpenseForm extends Component {
             numberOfMonths={1}
             isOutsideRange={day => false}
           />
-          <textarea
-            placeholder="Add a note for your expense (optional)"
-            value={this.state.rent}
-            onChange={this.onTextAreaChange}
-          />
+
           <button>Add Expense</button>
         </form>
-      </div>
+      </FormContainer>
     );
   }
 }
