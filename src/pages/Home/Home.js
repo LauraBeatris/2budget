@@ -44,7 +44,11 @@ const Home = () => (
         </p>
         <p className="copy">
           Copyright ©{" "}
-          <a href="https://github.com/LauraBeatris" target="_blank">
+          <a
+            href="https://github.com/LauraBeatris"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Laura Beatris{" "}
           </a>
         </p>

@@ -6,7 +6,7 @@ export const HomeContainer = styled.section`
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 
   @media screen and (max-width: 1040px) {
     width: 100vw;
@@ -172,6 +172,7 @@ export const FirstColumn = styled.div`
 export const SecondColumn = styled.div`
   img {
     border-radius: 100px;
+    margin-left: 100px;
   }
 
   @media screen and (max-width: 1040px) {
