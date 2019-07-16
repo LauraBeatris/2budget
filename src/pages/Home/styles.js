@@ -49,7 +49,7 @@ export const FirstColumn = styled.div`
     color: rgb(77, 81, 94);
     font-size: 4.5rem;
     text-transform: uppercase;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 
     span {
       color: #6dbfcc;
@@ -68,10 +68,10 @@ export const FirstColumn = styled.div`
 
       color: #a8a9af;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: lighter;
       padding: 1rem 2rem;
-      padding-left: 5rem;
+      padding-left: 4rem;
       border: none;
       border-radius: 15px;
       display: inline-block;
@@ -108,7 +108,7 @@ export const FirstColumn = styled.div`
       border: none;
       font-size: 1.8rem;
       font-weight: bold;
-      padding: 2.5rem 4rem;
+      padding: 2rem 4rem;
       color: white;
       border-radius: 100px;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -133,11 +133,11 @@ export const FirstColumn = styled.div`
   }
 
   div.msg-container {
-    margin-top: 15rem;
+    margin-top: 5rem;
     text-align: left;
 
     p {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #7f8084;
       font-weight: bold;
 
@@ -152,7 +152,7 @@ export const FirstColumn = styled.div`
     }
     .copy {
       color: rgb(209, 77, 53);
-      font-weight: bold;
+      font-weight: 700;
       margin-top: 0.5rem;
 
       a {
@@ -173,6 +173,7 @@ export const SecondColumn = styled.div`
   img {
     border-radius: 100px;
     margin-left: 100px;
+    height: 50rem;
   }
 
   @media screen and (max-width: 1040px) {

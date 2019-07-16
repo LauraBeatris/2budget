@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header/Header";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import AddExpensePage from "../pages/AddExpensePage/AddExpensePage";
