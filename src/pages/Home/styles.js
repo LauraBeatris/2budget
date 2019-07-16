@@ -9,9 +9,7 @@ export const HomeContainer = styled.section`
   justify-content: space-around;
 
   @media screen and (max-width: 1040px) {
-    width: 100vw;
-    position: absolute;
-    top: 40%;
+    margin: 4rem auto;
   }
 `;
 
@@ -21,7 +19,7 @@ export const FirstColumn = styled.div`
   text-align: center;
   width: 25%;
 
-  @media screen and (max-width: 1040px) {
+  @media screen and (max-width: 1020px) {
     text-align: center;
     width: inherit;
   }
@@ -42,6 +40,10 @@ export const FirstColumn = styled.div`
       position: absolute;
       top: 10px;
       left: 5%;
+
+      @media screen and (max-width: 1020px) {
+        left: 2.5%;
+      }
     }
   }
 
@@ -160,10 +162,10 @@ export const FirstColumn = styled.div`
       }
     }
     @media screen and (max-width: 1040px) {
-      margin: 15rem auto;
+      margin: 4.5rem auto;
 
       p {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
     }
   }

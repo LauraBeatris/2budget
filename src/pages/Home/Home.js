@@ -29,7 +29,7 @@ const Home = () => (
             placeholder="Password"
           />
           <span>
-            <img src={Lock} alt="user-cion" />
+            <img id="user" src={Lock} alt="user-cion" />
           </span>
         </div>
 

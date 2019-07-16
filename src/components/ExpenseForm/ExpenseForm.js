@@ -6,10 +6,11 @@ import "react-dates/lib/css/_datepicker.css";
 export default class ExpenseForm extends Component {
   state = {
     description: "",
-    rent: "",
+    note: "",
     amount: "",
     createdAt: moment(),
-    calendarFocused: false
+    calendarFocused: false,
+    error: ""
   };
 
   // Updating the description state with the input value
@@ -20,60 +21,87 @@ export default class ExpenseForm extends Component {
 
   // Updating the note state with the text area value
   onTextAreaChange = event => {
-    const rent = event.target.value;
-    this.setState({ rent });
+    const note = event.target.value;
+    this.setState({ note });
   };
 
   // Updating the amount state with the text area value
   onAmountChange = event => {
     const amount = event.target.value;
 
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState({ amount });
     }
   };
 
   // Handling the data changing and setting it to state
   onDateChange = createdAt => {
-    this.setState(({ createdAt }));
+    // Prevent the user to clear the value
+    if (createdAt) {
+      this.setState({ createdAt });
+    }
   };
 
   // Handling the focus changing and setting it to state
   onFocusChange = ({ focused }) => {
-    this.setState(({ calendarFocused: focused }));
+    this.setState({ calendarFocused: focused });
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+
+    // Checking if there's a description and a amount
+    if (!this.state.description || !this.state.amount) {
+      // Set error state equal to 'Please provide description and amount'
+      const error = "Please provide description and amount";
+      this.setState({ error });
+    } else {
+      // Clear the error
+      this.setState({ error: "" });
+      // Calling the onSubmit of from props to pass a expense
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note
+      });
+    }
   };
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          placeholder="description"
-          value={this.state.description}
-          onChange={this.onDescriptionChange}
-          autoFocus
-        />
-        <input
-          type="number"
-          placeholder="amount"
-          value={this.state.amount}
-          onChange={this.onAmountChange}
-        />
-        <SingleDatePicker
-          date={this.state.createdAt}
-          onDateChange={this.onDateChange}
-          focused={this.state.calendarFocused}
-          onFocusChange={this.onFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={day => false}
-        />
-        <textarea
-          placeholder="Add a note for your expense (optional)"
-          value={this.state.rent}
-          onChange={this.onTextAreaChange}
-        />
-        <button>Add Expense</button>
-      </form>
+      <div>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
+          <input
+            type="text"
+            placeholder="description"
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
+            autoFocus
+          />
+          <input
+            type="number"
+            placeholder="amount"
+            value={this.state.amount}
+            onChange={this.onAmountChange}
+          />
+          <SingleDatePicker
+            date={this.state.createdAt}
+            onDateChange={this.onDateChange}
+            focused={this.state.calendarFocused}
+            onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={day => false}
+          />
+          <textarea
+            placeholder="Add a note for your expense (optional)"
+            value={this.state.rent}
+            onChange={this.onTextAreaChange}
+          />
+          <button>Add Expense</button>
+        </form>
+      </div>
     );
   }
 }

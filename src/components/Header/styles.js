@@ -8,7 +8,7 @@ export const HeaderStyled = styled.header`
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  padding: 2rem 5rem;
+  padding: 2rem 4rem;
   max-width: 100vw;
 
   h1.logo {
