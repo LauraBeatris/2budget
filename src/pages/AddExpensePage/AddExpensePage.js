@@ -3,13 +3,14 @@ import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
 import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
 import { addExpense } from "../../actions/expenses";
+import { AddContainer } from "./styles";
 
 // Creating the add page component
 const AddExpensePage = props => (
   <div>
     <Header />
-    <div>
-      <h1>Add a expense page</h1>
+    <AddContainer>
+      <h1 className="add-title">Add a expense</h1>
       <ExpenseForm
         // Dispatching the action ADD_EXPENSE to the redux store
         onSubmit={expense => {
@@ -18,7 +19,7 @@ const AddExpensePage = props => (
           props.history.push("/dashboard");
         }}
       />
-    </div>
+    </AddContainer>
   </div>
 );
 

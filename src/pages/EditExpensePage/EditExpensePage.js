@@ -3,12 +3,13 @@ import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
 import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
 import { editExpense, removeExpense } from "../../actions/expenses";
+import { ButtonRemove, EditContainer } from "./styles";
 
 // Creating the edit page component
 const EditExpensePage = props => (
   <div>
     <Header />
-    <div>
+    <EditContainer>
       <ExpenseForm
         expense={props.expense}
         onSubmit={expense => {
@@ -18,16 +19,17 @@ const EditExpensePage = props => (
           props.history.push("/dashboard");
         }}
       />
-      <button
+      <ButtonRemove
         onClick={() => {
           // Dispatching the remove action and redirecting to the dashboard
           props.dispatch(removeExpense({ id: props.expense.id }));
           props.history.push("/dashboard");
         }}
+        className="btn-remove"
       >
         Remove
-      </button>
-    </div>
+      </ButtonRemove>
+    </EditContainer>
   </div>
 );
 

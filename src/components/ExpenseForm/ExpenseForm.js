@@ -76,8 +76,13 @@ export default class ExpenseForm extends Component {
   render() {
     return (
       <FormContainer>
-        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
+          {" "}
+          <div>
+            {this.state.error && (
+              <p className="msg-error">{this.state.error}</p>
+            )}
+          </div>
           <div className="description-amount">
             <input
               type="text"
@@ -108,8 +113,7 @@ export default class ExpenseForm extends Component {
             numberOfMonths={1}
             isOutsideRange={day => false}
           />
-
-          <button>Add Expense</button>
+          <button className="btn-submit">Add Expense</button>
         </form>
       </FormContainer>
     );
