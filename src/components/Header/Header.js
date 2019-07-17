@@ -21,9 +21,6 @@ const Header = () => (
       </div>
 
       <div className="navbar-2">
-        <NavLink to="/help" activeClassName="is-active">
-          Help
-        </NavLink>
         <NavLink className="logout" exact to="/" activeClassName="is-active">
           LogOut
         </NavLink>
