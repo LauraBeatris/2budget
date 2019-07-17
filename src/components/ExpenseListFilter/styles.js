@@ -36,4 +36,8 @@ export const FilterContainer = styled.div`
       }
     }
   }
+
+  .date-range {
+    margin-top: 2rem;
+  }
 `;
