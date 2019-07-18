@@ -1,7 +1,7 @@
 
 # 2Budget
 ---
-<h2> Technologies/Libraries: React, Redux, Styled Components, MomentJS, React-Dates(Airbnb) </h2>
+<h2> Technologies/Libraries: React, Redux, Styled Components, MomentJS, React-Dates </h2>
 
 
 ###  [View live version](http://laurabeatris.github.io/2budget) 🚀
