@@ -26,7 +26,7 @@ const Header = () => (
             <span>2</span>Budget
           </h1>
           <input id="burger" type="checkbox" />
-          <label for="burger">
+          <label htmlFor="burger">
             <span />
             <span />
             <span />

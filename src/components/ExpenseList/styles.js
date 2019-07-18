@@ -33,4 +33,8 @@ export const ListContainer = styled.div`
       font-weight: 500;
     }
   }
+
+  @media screen and (max-width: 45rem) {
+    margin: 2rem auto;
+  }
 `;

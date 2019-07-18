@@ -116,8 +116,8 @@ export const Hamburger = styled.nav`
 
   input + label {
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 45px;
+    right: 70px;
     height: 20px;
     width: 15px;
     z-index: 5;

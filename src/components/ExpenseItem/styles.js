@@ -25,4 +25,12 @@ export const ItemContainer = styled.div`
     color: rgb(77, 81, 94);
     font-weight: 500;
   }
+
+  @media screen and (max-width: 45rem) {
+    width: inherit;
+
+    p {
+      margin-left: 2rem;
+    }
+  }
 `;

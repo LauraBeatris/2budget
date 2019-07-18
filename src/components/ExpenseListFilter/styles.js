@@ -7,7 +7,7 @@ export const FilterContainer = styled.div`
   margin-top: 1rem;
   .input-container {
     input:first-child {
-      margin-right: 2rem;
+      margin-right: 0.5rem;
       padding: 0.5rem 1rem;
       font-size: 1.5rem;
       border-radius: 8px;
@@ -19,6 +19,10 @@ export const FilterContainer = styled.div`
         text-transform: lowercase;
         color: rgb(77, 81, 94);
       }
+    }
+
+    .DateRangePickerInput {
+      margin: 1rem 2rem;
     }
 
     select {
