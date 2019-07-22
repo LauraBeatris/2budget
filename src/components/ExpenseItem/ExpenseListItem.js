@@ -3,7 +3,7 @@ import { ItemContainer } from "./styles";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-const ExpenseItem = ({ id, description, amount, createdAt }) => (
+export const ExpenseItem = ({ id, description, amount, createdAt }) => (
   <ItemContainer>
     <Link className="description" to={`/edit/${id}`}>
       {description}

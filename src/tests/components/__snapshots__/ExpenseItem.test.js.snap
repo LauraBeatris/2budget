@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseItem with the expense data 1`] = `
+<.sc-bdVaJa>
+  <Link
+    className="description"
+    to="/edit/1"
+  >
+    Water rent
+  </Link>
+  <p
+    className="amount"
+  >
+    $
+    195
+  </p>
+  <p
+    className="createdAt"
+  >
+    31/12/1969
+  </p>
+</.sc-bdVaJa>
+`;

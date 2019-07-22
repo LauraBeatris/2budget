@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
 import { FormContainer } from "./styles";
 
 export default class ExpenseForm extends Component {

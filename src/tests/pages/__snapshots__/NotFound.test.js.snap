@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NotFound correctly 1`] = `
+<div>
+  <Header />
+  <h1>
+     What are you doing here? 
+  </h1>
+  <Link
+    to="/dashboard"
+  >
+    Go Home
+  </Link>
+</div>
+`;

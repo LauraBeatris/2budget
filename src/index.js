@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./Styles/styles.scss";
+
+import "react-dates/lib/css/_datepicker.css";
 import configureStore from "./store/configureStore";
 import { addExpense } from "./actions/expenses";
 import { Provider } from "react-redux";

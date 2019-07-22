@@ -56,7 +56,7 @@ export const HeaderStyled = styled.header`
         }
       }
 
-      @media screen and (max-width: 45rem) {
+      @media screen and (max-width: 48rem) {
         display: none;
       }
     }
@@ -90,6 +90,11 @@ export const HeaderStyled = styled.header`
 
 export const Hamburger = styled.nav`
   display: none;
+
+  @media screen and (max-width: 48rem) {
+    display: flex;
+    flex-direction: row;
+  }
 
   h1 {
     position: fixed;
@@ -200,10 +205,9 @@ export const Hamburger = styled.nav`
         transition-delay: 0.5s;
       }
     }
-  }
+  
 
-  @media screen and (max-width: 45rem) {
-    display: flex;
-    flex-direction: row;
-  }
+  
+
+  
 `;

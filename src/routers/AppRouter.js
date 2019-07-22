@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalStyle from "../styles/global";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import AddExpensePage from "../pages/AddExpensePage/AddExpensePage";
@@ -11,6 +12,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 const AppRouter = () => (
   <BrowserRouter>
     <div>
+      <GlobalStyle />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/2budget" component={Home} />

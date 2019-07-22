@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div
+  className="navbar-wrapper"
+>
+  <.sc-bdVaJa
+    className="header"
+  >
+    <div
+      className="navbar-1"
+    >
+      <h1
+        className="logo"
+      >
+        <span>
+          2
+        </span>
+        Budget
+      </h1>
+      <nav>
+        <NavLink
+          activeClassName="is-active"
+          exact={true}
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          activeClassName="is-active"
+          to="/create"
+        >
+          Create Expense
+        </NavLink>
+      </nav>
+    </div>
+    <div
+      className="navbar-2"
+    >
+      <.sc-bwzfXH>
+        <h1
+          className="logo"
+        >
+          <span>
+            2
+          </span>
+          Budget
+        </h1>
+        <input
+          id="burger"
+          type="checkbox"
+        />
+        <label
+          htmlFor="burger"
+        >
+          <span />
+          <span />
+          <span />
+        </label>
+        <nav>
+          <ul>
+            <li>
+              <NavLink
+                activeClassName="is-active"
+                exact={true}
+                to="/dashboard"
+              >
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="is-active"
+                to="/create"
+              >
+                Create Expense
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="is-active"
+                exact={true}
+                to="/"
+              >
+                LogOut
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </.sc-bwzfXH>
+      <NavLink
+        activeClassName="is-active"
+        className="logout"
+        exact={true}
+        to="/"
+      >
+        LogOut
+      </NavLink>
+    </div>
+  </.sc-bdVaJa>
+</div>
+`;

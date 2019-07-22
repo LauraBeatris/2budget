@@ -6,16 +6,20 @@ import { ListContainer } from "./styles";
 import moment from "moment";
 
 // Regular unconnect components
-const ExpenseList = props => (
+export const ExpenseList = props => (
   <ListContainer>
     <div className="summary">
       <p className="moment">{moment().format("MMMM YYYY")}</p>
       <h1 className="total-amount">$208,5</h1>
       <h2>Total Amount</h2>
     </div>
-    {props.expenses.map(expense => (
-      <ExpenseItem key={expense.id} {...expense} />
-    ))}
+    {props.expenses.length === 0 ? (
+      <p>No expenses</p>
+    ) : (
+      props.expenses.map(expense => (
+        <ExpenseItem key={expense.id} {...expense} />
+      ))
+    )}
   </ListContainer>
 );
 

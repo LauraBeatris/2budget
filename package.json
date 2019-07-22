@@ -1,13 +1,45 @@
 {
   "name": "budget",
   "version": "0.1.0",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.(css|scss|less)$": "jest-css-modules"
+    },
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src/frontend",
+      "src/shared"
+    ]
+  },
   "private": true,
   "homepage": "http://laurabeatris.github.io/2budget",
   "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.5",
+    "enzyme": "3.0.0",
+    "enzyme-adapter-react-15": "^1.4.0",
+    "enzyme-adapter-react-16": "1.0.0",
+    "enzyme-to-json": "3.0.1",
     "gh-pages": "^2.0.1",
+    "jest-css-modules": "^2.1.0",
     "moment": "2.18.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
+    "raf": "3.3.2",
     "react": "^16.8.6",
     "react-addons-shallow-compare": "15.6.0",
     "react-dates": "12.7.0",
@@ -15,6 +47,7 @@
     "react-redux": "5.0.5",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-test-renderer": "16.0.0",
     "redux": "^4.0.3",
     "styled-components": "^4.3.2",
     "uuid": "^3.3.2"
@@ -22,7 +55,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --config=jest.config.json",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -42,5 +75,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
+  }
 }

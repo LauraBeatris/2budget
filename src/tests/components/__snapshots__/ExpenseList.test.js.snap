@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseList with empty message 1`] = `
+<.sc-bwzfXH>
+  <div
+    className="summary"
+  >
+    <p
+      className="moment"
+    >
+      December 1969
+    </p>
+    <h1
+      className="total-amount"
+    >
+      $208,5
+    </h1>
+    <h2>
+      Total Amount
+    </h2>
+  </div>
+  <p>
+    No expenses
+  </p>
+</.sc-bwzfXH>
+`;
+
+exports[`should render ExpenseList with expenses 1`] = `
+<.sc-bwzfXH>
+  <div
+    className="summary"
+  >
+    <p
+      className="moment"
+    >
+      December 1969
+    </p>
+    <h1
+      className="total-amount"
+    >
+      $208,5
+    </h1>
+    <h2>
+      Total Amount
+    </h2>
+  </div>
+  <ExpenseItem
+    amount={195}
+    createdAt={"1970-01-01T00:00:00.000Z"}
+    description="Water rent"
+    id="1"
+    key="1"
+    note="Random note"
+  />
+  <ExpenseItem
+    amount={3100}
+    createdAt={-345600000}
+    description="Gas rent"
+    id="2"
+    key="2"
+    note="Random note"
+  />
+  <ExpenseItem
+    amount={31000}
+    createdAt={345600000}
+    description="College rent"
+    id="3"
+    key="3"
+    note="Random note"
+  />
+</.sc-bwzfXH>
+`;
