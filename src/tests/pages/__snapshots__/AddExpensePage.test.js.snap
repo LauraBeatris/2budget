@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AddExpensePage correctly 1`] = `
+<div>
+  <Header />
+  <.sc-bxivhb>
+    <h1
+      className="add-title"
+    >
+      Add a expense
+    </h1>
+    <ExpenseForm
+      onSubmit={[Function]}
+    />
+  </.sc-bxivhb>
+</div>
+`;
