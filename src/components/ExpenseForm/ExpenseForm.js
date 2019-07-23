@@ -112,7 +112,7 @@ export default class ExpenseForm extends Component {
             numberOfMonths={1}
             isOutsideRange={day => false}
           />
-          <button className="btn-submit">Add Expense</button>
+          <button className="btn-submit">{this.props.type} Expense</button>
         </form>
       </FormContainer>
     );

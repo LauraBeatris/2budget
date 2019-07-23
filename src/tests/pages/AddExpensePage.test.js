@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import { AddExpensePage } from "../../pages/AddExpensePage/AddExpensePage";
 import expenses from "../fixtures/expenses";
 
-let onSubmit, history, wrapper;
+let addExpense, history, wrapper;
 
 // Jest lifecycle method -> will run this code before each test
 beforeEach(() => {
@@ -11,9 +11,11 @@ beforeEach(() => {
   history = {
     push: jest.fn()
   };
-  onSubmit = jest.fn();
+  addExpense = jest.fn();
 
-  wrapper = shallow(<AddExpensePage onSubmit={onSubmit} history={history} />);
+  wrapper = shallow(
+    <AddExpensePage addExpense={addExpense} history={history} />
+  );
 });
 
 test("should render AddExpensePage correctly", () => {
@@ -25,6 +27,6 @@ test("should handle onSubmit", () => {
   wrapper.find("ExpenseForm").prop("onSubmit")(expenses[0]);
 
   // Checking if they were called with the correctly data
-  expect(history.push).toHaveBeenLastCalledWith("/");
-  expect(onSubmit).toHaveBeenLastCalledWith(expenses[0]);
+  expect(history.push).toHaveBeenLastCalledWith("/dashboard");
+  expect(addExpense).toHaveBeenLastCalledWith(expenses[0]);
 });
