@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditExpansePage correctly 1`] = `
+<div>
+  <Header />
+  <.sc-ifAKCX>
+    <ExpenseForm
+      expense={
+        Object {
+          "amount": 195,
+          "createdAt": "1970-01-01T00:00:00.000Z",
+          "description": "Water rent",
+          "id": "1",
+          "note": "Random note",
+        }
+      }
+      onSubmit={[Function]}
+      type="Edit"
+    />
+    <.sc-bxivhb
+      id="remove-button"
+      onClick={[Function]}
+    >
+      Remove
+    </.sc-bxivhb>
+  </.sc-ifAKCX>
+</div>
+`;

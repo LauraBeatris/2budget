@@ -5,7 +5,7 @@ import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
 import { editExpense, removeExpense } from "../../actions/expenses";
 import { ButtonRemove, EditContainer } from "./styles";
 
-class EditExpensePage extends Component {
+export class EditExpensePage extends Component {
   onSubmit = expense => {
     this.props.editExpense(this.props.expense.id, expense);
     this.props.history.push("/dashboard");
@@ -26,7 +26,9 @@ class EditExpensePage extends Component {
             expense={this.props.expense}
             onSubmit={this.onSubmit}
           />
-          <ButtonRemove onClick={this.onClick}>Remove</ButtonRemove>
+          <ButtonRemove id="remove-button" onClick={this.onClick}>
+            Remove
+          </ButtonRemove>
         </EditContainer>
       </div>
     );
