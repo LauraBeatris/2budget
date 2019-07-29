@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import ExpenseItem from "../ExpenseItem/ExpenseListItem";
-import selectExpenses from "../../selectors/expenses";
+import {getVisibleExpenses} from "../../selectors/expenses";
+import {getExpenseTotal} from "../../selectors/expenses";
 import { ListContainer } from "./styles";
 import moment from "moment";
 
@@ -26,7 +27,7 @@ export const ExpenseList = props => (
 // Mapping the state to the props of the component
 const mapStateToProps = state => {
   return {
-    expenses: selectExpenses(state.expenses, state.filters)
+    expenses: getVisibleExpenses(state.expenses, state.filters)
   };
 };
 
