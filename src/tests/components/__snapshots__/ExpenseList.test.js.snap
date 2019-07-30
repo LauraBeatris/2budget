@@ -1,49 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseList with empty message 1`] = `
-<.sc-bwzfXH>
-  <div
-    className="summary"
-  >
-    <p
-      className="moment"
-    >
-      December 1969
-    </p>
-    <h1
-      className="total-amount"
-    >
-      $208,5
-    </h1>
-    <h2>
-      Total Amount
-    </h2>
-  </div>
+<.sc-bdVaJa>
+  <Connect(ExpensesSummary) />
   <p>
     No expenses
   </p>
-</.sc-bwzfXH>
+</.sc-bdVaJa>
 `;
 
 exports[`should render ExpenseList with expenses 1`] = `
-<.sc-bwzfXH>
-  <div
-    className="summary"
-  >
-    <p
-      className="moment"
-    >
-      December 1969
-    </p>
-    <h1
-      className="total-amount"
-    >
-      $208,5
-    </h1>
-    <h2>
-      Total Amount
-    </h2>
-  </div>
+<.sc-bdVaJa>
+  <Connect(ExpensesSummary) />
   <ExpenseItem
     amount={195}
     createdAt={"1970-01-01T00:00:00.000Z"}
@@ -68,5 +36,5 @@ exports[`should render ExpenseList with expenses 1`] = `
     key="3"
     note="Random note"
   />
-</.sc-bwzfXH>
+</.sc-bdVaJa>
 `;
