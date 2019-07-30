@@ -11,6 +11,7 @@ exports[`should render AddExpensePage correctly 1`] = `
     </h1>
     <ExpenseForm
       onSubmit={[Function]}
+      type="Add"
     />
   </.sc-bxivhb>
 </div>

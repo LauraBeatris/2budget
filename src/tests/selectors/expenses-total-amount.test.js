@@ -9,7 +9,7 @@ test('should return 0 if no expenses', () => {
   })
   
   test('should corrently add up a single expenses', () => {
-    const total = getExpenseTotal(expenses[0])
+    const total = getExpenseTotal([expenses[0]])
   
     expect(total).toBe(195)
   })

@@ -109,7 +109,7 @@ exports[`should render ExpenseForm correctly 1`] = `
     <button
       className="btn-submit"
     >
-      Add Expense
+       Expense
     </button>
   </form>
 </.sc-bdVaJa>
@@ -224,7 +224,7 @@ exports[`should render ExpenseForm with expense data 1`] = `
     <button
       className="btn-submit"
     >
-      Add Expense
+       Expense
     </button>
   </form>
 </.sc-bdVaJa>
@@ -339,7 +339,7 @@ exports[`should render error for invalid form submission 1`] = `
     <button
       className="btn-submit"
     >
-      Add Expense
+       Expense
     </button>
   </form>
 </.sc-bdVaJa>
@@ -460,7 +460,7 @@ exports[`should render error for invalid form submission 2`] = `
     <button
       className="btn-submit"
     >
-      Add Expense
+       Expense
     </button>
   </form>
 </.sc-bdVaJa>

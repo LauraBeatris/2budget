@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render ExpensesSummary with 1 expense 1`] = `
+<div
+  className="summary"
+>
+  <p
+    className="moment"
+  >
+    December 1969
+  </p>
+  <p
+    className="quantity"
+  >
+    undefined Item
+  </p>
+  <h1
+    className="total-amount"
+  >
+    $0.00
+  </h1>
+  <h2>
+    Total Amount
+  </h2>
+</div>
+`;
+
+exports[`should correctly render ExpensesSummary with more than 1 expense 1`] = `
+<div
+  className="summary"
+>
+  <p
+    className="moment"
+  >
+    December 1969
+  </p>
+  <p
+    className="quantity"
+  >
+    undefined Item
+  </p>
+  <h1
+    className="total-amount"
+  >
+    $0.00
+  </h1>
+  <h2>
+    Total Amount
+  </h2>
+</div>
+`;
