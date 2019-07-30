@@ -1,19 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import ExpenseItem from "../ExpenseItem/ExpenseListItem";
 import {getVisibleExpenses} from "../../selectors/expenses";
-import {getExpenseTotal} from "../../selectors/expenses";
 import { ListContainer } from "./styles";
-import moment from "moment";
+import ExpenseItem from "../ExpenseItem/ExpenseListItem";
+import ExpensesSummary from "../ExpensesSummary/ExpensesSummary";
+
 
 // Regular unconnect components
 export const ExpenseList = props => (
   <ListContainer>
-    <div className="summary">
-      <p className="moment">{moment().format("MMMM YYYY")}</p>
-      <h1 className="total-amount">$208,5</h1>
-      <h2>Total Amount</h2>
-    </div>
+    <ExpensesSummary />
     {props.expenses.length === 0 ? (
       <p>No expenses</p>
     ) : (

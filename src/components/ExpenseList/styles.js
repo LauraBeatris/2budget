@@ -25,7 +25,7 @@ export const ListContainer = styled.div`
       font-weight: bold;
     }
 
-    .moment {
+    .moment, .quantity {
       font-size: 1.8rem;
 
       margin-bottom: 1rem;

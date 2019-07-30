@@ -28,17 +28,17 @@ export const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate 
 };
 
 export const getExpenseTotal = (expenses) => {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue
-  if (expenses && expenses.length > 0){
+  if (expenses.length === 0) {
+    return 0
+  } else if (expenses.length > 1) {
     const amounts = expenses.map((expense) => expense.amount)
-    const total = amounts.reduce(reducer, 0)
-  
-    return total
-  } else if (expenses) {
-    return expenses
+    return amounts.reduce((sum, value) => sum + value, 1)
+  } else {
+    return expenses[0].amount
   }
 
-  return 0
+
+  
   
 }
 
