@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
 import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
-import { addExpense } from "../../actions/expenses";
+import { addExpenseRequest } from "../../actions/expenses";
 import { AddContainer } from "./styles";
 
 export class AddExpensePage extends Component {
@@ -29,7 +29,7 @@ export class AddExpensePage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addExpense: expense => dispatch(addExpense(expense))
+  addExpense: expense => dispatch(addExpenseRequest(expense))
 });
 
 export default connect(
