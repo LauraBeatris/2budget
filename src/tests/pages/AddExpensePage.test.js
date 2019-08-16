@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import { AddExpensePage } from "../../pages/AddExpensePage/AddExpensePage";
 import expenses from "../fixtures/expenses";
 
-let addExpense, history, wrapper;
+let addExpenseRequest, history, wrapper;
 
 // Jest lifecycle method -> will run this code before each test
 beforeEach(() => {
@@ -11,10 +11,10 @@ beforeEach(() => {
   history = {
     push: jest.fn()
   };
-  addExpense = jest.fn();
+  addExpenseRequest = jest.fn();
 
   wrapper = shallow(
-    <AddExpensePage addExpense={addExpense} history={history} />
+    <AddExpensePage addExpense={addExpenseRequest} history={history} />
   );
 });
 
@@ -28,5 +28,5 @@ test("should handle onSubmit", () => {
 
   // Checking if they were called with the correctly data
   expect(history.push).toHaveBeenLastCalledWith("/dashboard");
-  expect(addExpense).toHaveBeenLastCalledWith(expenses[0]);
+  expect(addExpenseRequest).toHaveBeenLastCalledWith(expenses[0]);
 });
