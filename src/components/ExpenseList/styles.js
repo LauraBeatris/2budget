@@ -9,6 +9,11 @@ export const ListContainer = styled.div`
   font-family: "Montserrat", sans-serif;
   margin-top: 4rem;
 
+  p {
+    font-size: 1.6rem;
+    font-weight: lighter;
+  }
+
   .summary {
     line-height: 1;
     margin-bottom: 4rem;
@@ -25,7 +30,8 @@ export const ListContainer = styled.div`
       font-weight: bold;
     }
 
-    .moment, .quantity {
+    .moment,
+    .quantity {
       font-size: 1.8rem;
 
       margin-bottom: 1rem;
