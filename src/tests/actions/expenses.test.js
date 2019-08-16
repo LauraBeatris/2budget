@@ -1,4 +1,5 @@
 import { removeExpense, addExpense, editExpense } from "../../actions/expenses";
+import expenses from "../fixtures/expenses";
 
 test("should setup remove expense action object", () => {
   const action = removeExpense({ id: "abc123" });
@@ -36,27 +37,9 @@ test("should setup add expense action object with provided values", () => {
     note: "This was last month rent"
   };
 
-  const action = addExpense(expenseData);
+  const action = addExpense(expenses[2]);
   expect(action).toEqual({
     type: "ADD_EXPENSE",
-    expense: {
-      ...expenseData,
-      id: expect.any(String)
-    }
-  });
-});
-
-test("should setup add expense action object with default values", () => {
-  const action = addExpense();
-
-  expect(action).toEqual({
-    type: "ADD_EXPENSE",
-    expense: {
-      id: expect.any(String), //We just know it's gonna be a string
-      description: "",
-      note: "",
-      amount: 0,
-      createdAt: 0
-    }
+    expense: expenses[2]
   });
 });
