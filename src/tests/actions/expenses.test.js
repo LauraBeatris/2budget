@@ -52,7 +52,7 @@ test("should setup add expense action object with provided values", () => {
 
 test("should add expense to database and store", done => {
   const store = createMockStore();
-  const expenseDefault = {
+  const expenseData = {
     description: "Mouse",
     amount: "3000",
     note: "This one is better",
@@ -64,7 +64,7 @@ test("should add expense to database and store", done => {
   // We'll just make our associations when all the things will be ready
   // Promisse chaining
   store
-    .dispatch(addExpenseRequest(expenseDefault))
+    .dispatch(addExpenseRequest(expenseData))
     .then(() => {
       // This will return an array with all of the actions
       const actions = store.getActions();
@@ -72,14 +72,14 @@ test("should add expense to database and store", done => {
         type: "ADD_EXPENSE",
         expense: {
           id: expect.any(String),
-          ...expenseDefault
+          ...expenseData
         }
       });
 
       return database.ref(`expenses/${actions[0].expense.id}`).once("value");
     })
     .then(snapshot => {
-      expect(snapshot.val()).toEqual(expenseDefault);
+      expect(snapshot.val()).toEqual(expenseData);
       done();
     });
 });
