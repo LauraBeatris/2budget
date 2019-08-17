@@ -24,7 +24,7 @@ export const addExpenseRequest = (expenseData = {}) => {
       createdAt
     };
     // After sending this to database -> dispatch the action to the store
-    database
+    return database
       .ref("expenses")
       .push(expense)
       .then(ref => {
