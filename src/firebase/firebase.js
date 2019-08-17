@@ -2,13 +2,13 @@ import * as firebase from "firebase";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyDpFCXP62lz2S0niT7r6y5Kw3n03vKeJrU",
-  authDomain: "budget-296d3.firebaseapp.com",
-  databaseURL: "https://budget-296d3.firebaseio.com",
-  projectId: "budget-296d3",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
   storageBucket: "",
-  messagingSenderId: "316945241396",
-  appId: "1:316945241396:web:ae378532e8168e70"
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

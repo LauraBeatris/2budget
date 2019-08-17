@@ -98,7 +98,7 @@ test("should add expense with defaults to database and store", done => {
     .dispatch(addExpenseRequest())
     .then(() => {
       const actions = store.getActions();
-      console.log(actions[0]);
+      //console.log(actions[0]);
       // Verifying if the action is right
       expect(actions[0]).toEqual({
         type: "ADD_EXPENSE",
