@@ -7,7 +7,7 @@ import {
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import expenses from "../fixtures/expenses";
-import { create } from "istanbul-reports";
+import database from "../../firebase/firebase";
 
 // Creating the configuration of the mock store for the tests cases create the
 // same mock store everytime
@@ -52,9 +52,9 @@ test("should setup add expense action object with provided values", () => {
 
 test("should add expense to database and store", done => {
   const store = createMockStore();
-  const expenseData = {
+  const expenseDefault = {
     description: "Mouse",
-    rent: "3000",
+    amount: "3000",
     note: "This one is better",
     createdAt: 1000
   };
@@ -63,8 +63,56 @@ test("should add expense to database and store", done => {
 
   // We'll just make our associations when all the things will be ready
   // Promisse chaining
-  store.dispatch(addExpenseRequest(expenseData)).then(() => {
-    expect(1).toBe(2);
-    done();
-  });
+  store
+    .dispatch(addExpenseRequest(expenseDefault))
+    .then(() => {
+      // This will return an array with all of the actions
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "ADD_EXPENSE",
+        expense: {
+          id: expect.any(String),
+          ...expenseDefault
+        }
+      });
+
+      return database.ref(`expenses/${actions[0].expense.id}`).once("value");
+    })
+    .then(snapshot => {
+      expect(snapshot.val()).toEqual(expenseDefault);
+      done();
+    });
+});
+
+test("should add expense with defaults to database and store", done => {
+  const store = createMockStore();
+  const expenseData = {
+    description: "",
+    note: "",
+    amount: 0,
+    createdAt: 0
+  };
+
+  // Dispatching the action and getting the resolve
+  store
+    .dispatch(addExpenseRequest())
+    .then(() => {
+      const actions = store.getActions();
+      console.log(actions[0]);
+      // Verifying if the action is right
+      expect(actions[0]).toEqual({
+        type: "ADD_EXPENSE",
+        expense: {
+          id: expect.any(String),
+          ...expenseData
+        }
+      });
+
+      // After this, returning the subscription of the database, to see the data
+      return database.ref(`expenses/${actions[0].expense.id}`).once("value");
+    })
+    .then(snapshot => {
+      expect(snapshot.val()).toEqual(expenseData);
+      done();
+    });
 });
