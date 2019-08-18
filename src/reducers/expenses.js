@@ -17,6 +17,10 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
           return expense;
         }
       });
+    case "SET_EXPENSES":
+      // Replacing the existing ones
+      return action.expenses;
+
     default:
       return state;
   }

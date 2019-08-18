@@ -2,6 +2,8 @@ import expensesReducer from "../../reducers/expenses";
 import expenses from "../fixtures/expenses";
 import moment from "moment";
 
+import { setExpenses } from "../../actions/expenses";
+
 test("should set default state", () => {
   const state = expensesReducer(undefined, { type: "@@INIT" });
   expect(state).toEqual([]);
@@ -67,4 +69,15 @@ test("should not edit an expense if not found", () => {
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
+});
+
+test("should set expenses", () => {
+  const action = {
+    type: "SET_EXPENSES",
+    expenses: [expenses[2]]
+  };
+
+  const state = expensesReducer(expenses, action);
+
+  expect(state).toEqual([expenses[2]]);
 });

@@ -2,8 +2,11 @@ import {
   addExpenseRequest,
   removeExpense,
   addExpense,
-  editExpense
+  editExpense,
+  setExpenses,
+  startSetExpenses
 } from "../../actions/expenses";
+import moment from "moment";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import expenses from "../fixtures/expenses";
@@ -13,6 +16,25 @@ import database from "../../firebase/firebase";
 // same mock store everytime
 // Passing an array with the middlewares that we'll gonna use
 const createMockStore = configureMockStore([thunk]);
+
+// Before each test case
+beforeEach(done => {
+  const expensesData = {};
+  expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    expensesData[id] = {
+      description,
+      note,
+      amount,
+      createdAt
+    };
+  });
+  expensesData[1].createdAt = moment().valueOf();
+  database
+    .ref("expenses")
+    .set(expensesData)
+    .then(() => done())
+    .catch(err => console.log(err));
+});
 
 test("should setup remove expense action object", () => {
   const action = removeExpense({ id: "abc123" });
@@ -115,4 +137,29 @@ test("should add expense with defaults to database and store", done => {
       expect(snapshot.val()).toEqual(expenseData);
       done();
     });
+});
+
+test("should set up test expense action object with data", () => {
+  const action = setExpenses(expenses);
+  expect(action).toEqual({
+    type: "SET_EXPENSES",
+    expenses
+  });
+});
+
+test("should fetch the expenses from firebase", done => {
+  const store = createMockStore({});
+  store.dispatch(startSetExpenses()).then(() => {
+    // Getting the actions that were dispatched
+    const actions = store.getActions();
+
+    // It will get the expenses from the test database and then, send an
+    // action with that data that set the state
+
+    expect(actions[0]).toEqual({
+      type: "SET_EXPENSES",
+      expenses
+    });
+    done();
+  });
 });
