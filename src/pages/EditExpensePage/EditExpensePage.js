@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
 import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
-import { editExpense, startRemoveExpenses } from "../../actions/expenses";
+import { startRemoveExpenses, startEditExpenses } from "../../actions/expenses";
 import { ButtonRemove, EditContainer } from "./styles";
 
 export class EditExpensePage extends Component {
@@ -45,7 +45,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+  editExpense: (id, expense) => dispatch(startEditExpenses(id, expense)),
   removeExpense: expense => dispatch(startRemoveExpenses(expense))
 });
 

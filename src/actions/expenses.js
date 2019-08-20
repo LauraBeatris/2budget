@@ -96,9 +96,7 @@ export const startEditExpenses = (id, update) => {
     // Getting the reference of the expense from database and setting the new value
     return database
       .ref(`expenses/${id}`)
-      .set({
-        ...update
-      })
+      .update(update)
       .then(snapshot => {
         //expense edit
 

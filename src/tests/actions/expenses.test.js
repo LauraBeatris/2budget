@@ -194,13 +194,10 @@ test("should remove expenses from database", done => {
 
 test("should edit expense from firebase", done => {
   const id = expenses[1].id;
-  const store = createMockStore();
+  const store = createMockStore({});
 
   const update = {
-    description: "Water",
-    note: "Random",
-    amount: 1955,
-    createdAt: 1000
+    amount: 1955
   };
 
   // Dispatching the action to the store
@@ -219,9 +216,7 @@ test("should edit expense from firebase", done => {
       .ref(`expenses/${id}`)
       .once("value")
       .then(snapshot => {
-        expect(snapshot.val()).toEqual({
-          ...update
-        });
+        expect(snapshot.val().amount).toBe(update.amount);
 
         done();
       })
