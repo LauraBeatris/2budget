@@ -78,6 +78,8 @@ export const startSetExpenses = () => {
 };
 
 export const startRemoveExpenses = ({ id } = {}) => {
+  // This asyncronous function is responsable for doing a connection with
+  // firebase and dispatching an action
   return dispatch => {
     return database
       .ref(`expenses/${id}`)
@@ -86,5 +88,23 @@ export const startRemoveExpenses = ({ id } = {}) => {
         //console.log("expense removed");
         dispatch(removeExpense({ id }));
       });
+  };
+};
+
+export const startEditExpenses = (id, update) => {
+  return dispatch => {
+    // Getting the reference of the expense from database and setting the new value
+    return database
+      .ref(`expenses/${id}`)
+      .set({
+        ...update
+      })
+      .then(snapshot => {
+        //expense edit
+
+        //Dispatching the action to store
+        dispatch(editExpense(id, update));
+      })
+      .catch(err => console.log(err));
   };
 };

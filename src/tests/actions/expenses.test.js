@@ -5,7 +5,8 @@ import {
   editExpense,
   setExpenses,
   startSetExpenses,
-  startRemoveExpenses
+  startRemoveExpenses,
+  startEditExpenses
 } from "../../actions/expenses";
 import moment from "moment";
 import configureMockStore from "redux-mock-store";
@@ -185,6 +186,43 @@ test("should remove expenses from database", done => {
       .once("value")
       .then(snapshot => {
         expect(snapshot.val()).toBe(null);
+        done();
+      })
+      .catch(err => console.log(err));
+  });
+});
+
+test("should edit expense from firebase", done => {
+  const id = expenses[1].id;
+  const store = createMockStore();
+
+  const update = {
+    description: "Water",
+    note: "Random",
+    amount: 1955,
+    createdAt: 1000
+  };
+
+  // Dispatching the action to the store
+  store.dispatch(startEditExpenses(id, update)).then(() => {
+    const actions = store.getActions();
+
+    // Checking the action
+    expect(actions[0]).toEqual({
+      type: "EDIT_EXPENSE",
+      id,
+      update
+    });
+
+    // Veryfing if the database is up to date
+    database
+      .ref(`expenses/${id}`)
+      .once("value")
+      .then(snapshot => {
+        expect(snapshot.val()).toEqual({
+          ...update
+        });
+
         done();
       })
       .catch(err => console.log(err));
