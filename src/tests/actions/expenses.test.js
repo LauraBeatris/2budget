@@ -4,7 +4,8 @@ import {
   addExpense,
   editExpense,
   setExpenses,
-  startSetExpenses
+  startSetExpenses,
+  startRemoveExpenses
 } from "../../actions/expenses";
 import moment from "moment";
 import configureMockStore from "redux-mock-store";
@@ -163,5 +164,29 @@ test("should fetch the expenses from firebase", done => {
       expenses
     });
     done();
+  });
+});
+
+test("should remove expenses from database", done => {
+  let expense;
+  const store = createMockStore();
+
+  store.dispatch(startRemoveExpenses({ id: 1 })).then(() => {
+    const actions = store.getActions();
+    // Verifying the action object
+    expect(actions[0]).toEqual({
+      type: "REMOVE_EXPENSE",
+      id: 1
+    });
+
+    // Veryfing if the action was deleted from database
+    database
+      .ref("expenses/1")
+      .once("value")
+      .then(snapshot => {
+        expect(snapshot.val()).toBe(null);
+        done();
+      })
+      .catch(err => console.log(err));
   });
 });
