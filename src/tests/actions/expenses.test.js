@@ -156,6 +156,8 @@ test("should fetch the expenses from firebase", done => {
     // It will get the expenses from the test database and then, send an
     // action with that data that set the state
 
+    expenses[0].createdAt = moment().valueOf();
+
     expect(actions[0]).toEqual({
       type: "SET_EXPENSES",
       expenses
