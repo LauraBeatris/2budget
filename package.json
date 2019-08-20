@@ -21,7 +21,6 @@
     ]
   },
   "private": true,
-  "homepage": "http://laurabeatris.github.io/2budget",
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
