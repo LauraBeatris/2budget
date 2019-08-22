@@ -5,7 +5,9 @@
     "verbose": true,
     "transform": {
       "^.+\\.js$": "babel-jest",
-      "^.+\\.(css|scss|less)$": "jest-css-modules"
+      "^.+\\.(css|scss|less)$": "jest-css-modules",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js",
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/helpers/assetsTransformer.js"
     },
     "globals": {
       "NODE_ENV": "test"
@@ -31,9 +33,12 @@
     "express": "^4.17.1",
     "firebase": "^6.3.5",
     "gh-pages": "^2.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-transform-stub": "^2.0.0",
     "moment": "2.18.1",
     "node-sass": "^4.12.0",
     "numeral": "^2.0.6",
+    "polyfill": "^0.1.0",
     "prop-types": "^15.7.2",
     "raf": "3.3.2",
     "react": "^16.8.6",

@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render homepage correctly 1`] = `
+<.sc-bdVaJa>
+  <.sc-bwzfXH>
+     
+    <header>
+      <h1
+        className="home-title"
+      >
+        <span>
+          2
+        </span>
+        Budget
+      </h1>
+    </header>
+    <form
+      className="form-container"
+    >
+      <div
+        id="email"
+      >
+        <input
+          name="email"
+          placeholder="Email"
+          type="text"
+        />
+        <span>
+          <img
+            alt="user-cion"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </span>
+      </div>
+      <div
+        id="password"
+      >
+        <input
+          id="password"
+          name="password"
+          placeholder="Password"
+          type="password"
+        />
+        <span>
+          <img
+            alt="user-cion"
+            id="user"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </span>
+      </div>
+      <p
+        className="msg-form"
+      >
+        Forgot Password?
+      </p>
+      <Link
+        className="login-button"
+        to="/dashboard"
+      >
+        Login &gt;
+      </Link>
+    </form>
+    <div
+      className="msg-container"
+    >
+      <p>
+        Don't have an account? 
+        <span>
+          Sign up
+        </span>
+      </p>
+      <p
+        className="copy"
+      >
+        Copyright ©
+         
+        <a
+          href="https://github.com/LauraBeatris"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Laura Beatris
+           
+        </a>
+      </p>
+    </div>
+  </.sc-bwzfXH>
+  <.sc-htpNat>
+    <img
+      alt="budget-illustration"
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+    />
+  </.sc-htpNat>
+</.sc-bdVaJa>
+`;

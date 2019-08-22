@@ -5,6 +5,7 @@ import "react-dates/lib/css/_datepicker.css";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
+import { firebase } from "./firebase/firebase";
 
 import { startSetExpenses } from "./actions/expenses";
 
@@ -28,4 +29,15 @@ ReactDOM.render(<p> Loading... </p>, document.getElementById("root"));
 // When the expenses were already dispatched
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(app, document.getElementById("root"));
+});
+
+// Runs the callback function when the authentication state changes
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // Log in
+    console.log("log it");
+  } else {
+    // Log out
+    console.log("log out");
+  }
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeContainer, FirstColumn, SecondColumn } from "./styles";
-import BudgetIllustration from "../../assets/budget-illustration.png";
+import BudgetIllustration from "../../assets/budget_illustration.png";
 import User from "../../assets/user.svg";
 import Lock from "../../assets/lock.svg";
 import { Link } from "react-router-dom";

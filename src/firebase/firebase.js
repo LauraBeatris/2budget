@@ -14,6 +14,22 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the database service
-var database = firebase.database();
+const database = firebase.database();
 
-export { firebase, database as default };
+// Authentication service
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const emailAndPassword = (password, email) => {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(err => {
+      const error = {
+        code: err.code,
+        msg: err.message
+      };
+      return error;
+    })
+    .then(() => console.log("Login successful"));
+};
+
+export { firebase, googleAuthProvider, emailAndPassword, database as default };
