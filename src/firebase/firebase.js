@@ -18,18 +18,5 @@ const database = firebase.database();
 
 // Authentication service
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-const emailAndPassword = (password, email) => {
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .catch(err => {
-      const error = {
-        code: err.code,
-        msg: err.message
-      };
-      return error;
-    })
-    .then(() => console.log("Login successful"));
-};
 
-export { firebase, googleAuthProvider, emailAndPassword, database as default };
+export { firebase, googleAuthProvider, database as default };
