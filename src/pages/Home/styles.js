@@ -150,7 +150,7 @@ export const FirstColumn = styled.div`
 
   div.msg-container {
     margin-top: 5rem;
-    text-align: left;
+    text-align: center;
 
     p {
       font-size: 1.5rem;
