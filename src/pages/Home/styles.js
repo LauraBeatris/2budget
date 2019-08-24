@@ -11,6 +11,13 @@ export const HomeContainer = styled.section`
   @media screen and (max-width: 1040px) {
     margin: 4rem auto;
   }
+
+  .google-msg {
+    p span {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export const FirstColumn = styled.div`
@@ -91,8 +98,15 @@ export const FirstColumn = styled.div`
       background-image: url("../../assets/lock.svg");
     }
 
+    p#error-msg {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: red;
+      margin-top: 1rem;
+    }
+
     p.msg-form {
-      margin-top: 5rem;
+      margin-top: 2rem;
       font-size: 2rem;
       color: #7f8084;
       font-weight: bold;
@@ -180,5 +194,18 @@ export const SecondColumn = styled.div`
 
   @media screen and (max-width: 1040px) {
     display: none;
+  }
+`;
+
+export const Google = styled.a`
+  font-size: 1.5rem;
+  color: #7f8084;
+  margin-top: 2rem;
+  font-weight: 700;
+
+  span {
+    text-decoration: underline;
+    color: rgb(209, 77, 53);
+    cursor: pointer;
   }
 `;
