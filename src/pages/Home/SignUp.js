@@ -37,24 +37,21 @@ class Home extends Component {
               } else {
                 firebase
                   .auth()
-                  .signInWithEmailAndPassword(
+                  .createUserWithEmailAndPassword(
                     this.email.value,
                     this.password.value
                   )
                   .then(res => {
-                    const token = res.credential.accessToken;
-                    const user = res.user;
-
                     this.setState({ error: null });
-                    this.props.history.push("/dashboard");
+                    this.props.history.push("/");
                   })
                   .catch(err => {
-                    console.log("Error code: ", err.code);
+                    console.log("Error code: ", err);
 
-                    const errors = {
-                      "auth/user-not-found": "User not found"
-                    };
-                    this.setState({ error: errors[err.code] });
+                    // const errors = {
+                    //   "auth/user-not-found": "User not found"
+                    // };
+                    // this.setState({ error: errors[err.code] });
                     console.log("Error message: ", err.message);
                   });
               }
@@ -90,7 +87,7 @@ class Home extends Component {
             </div>
             <p className="error" id="error-msg">
               {" "}
-              {this.state.error}{" "}
+              {this.state.error ? this.state.error : null}{" "}
             </p>
 
             <div id="button-container">

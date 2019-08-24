@@ -44,18 +44,15 @@ class Home extends Component {
                     this.password.value
                   )
                   .then(res => {
-                    const token = res.credential.accessToken;
-                    const user = res.user;
-
                     this.setState({ error: null });
                     this.props.history.push("/dashboard");
                   })
                   .catch(err => {
-                    console.log("Error code: ", err.code);
-
                     const errors = {
-                      "auth/user-not-found": "User not found"
+                      "auth/user-not-found": "User not found",
+                      "auth/wrong-password": "Wrong password"
                     };
+                    console.log(err.code);
                     this.setState({ error: errors[err.code] });
                     console.log("Error message: ", err.message);
                   });
@@ -86,7 +83,10 @@ class Home extends Component {
                 <img id="user" src={Lock} alt="user-cion" />
               </span>
             </div>
-
+            <p className="error" id="error-msg">
+              {" "}
+              {this.state.error ? this.state.error : null}{" "}
+            </p>
             <p className="msg-form">Forgot Password?</p>
             <button type="submit" className="login-button">
               Login &gt;

@@ -113,7 +113,7 @@ export const FirstColumn = styled.div`
       font-size: 1.5rem;
       font-weight: bold;
       color: red;
-      margin-top: 1rem;
+      margin: 1rem 0rem;
     }
 
     p.msg-form {
