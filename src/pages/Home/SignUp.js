@@ -3,7 +3,6 @@ import { HomeContainer, FirstColumn, SecondColumn, Google } from "./styles";
 import BudgetIllustration from "../../assets/budget_illustration.png";
 import User from "../../assets/user.svg";
 import Lock from "../../assets/lock.svg";
-import { Link } from "react-router-dom";
 
 import { firebase } from "../../firebase/firebase";
 import { connect } from "react-redux";
@@ -137,7 +136,7 @@ class Home extends Component {
           </Google>
           <div className="msg-container">
             <p>
-              Don't have an account? <Link to="/signup">Sign up</Link>
+              Don't have an account? <span>Sign up</span>
             </p>
             <p className="copy">
               Copyright ©{" "}
@@ -151,10 +150,6 @@ class Home extends Component {
             </p>
           </div>
         </FirstColumn>
-
-        <SecondColumn>
-          <img src={BudgetIllustration} alt="budget-illustration" />
-        </SecondColumn>
       </HomeContainer>
     );
   }

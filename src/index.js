@@ -32,10 +32,13 @@ store.dispatch(startSetExpenses()).then(() => {
 });
 
 // Runs the callback function when the authentication state changes
+// This allow us to run this function every single time that the authentication
+// changes
+
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     // Log in
-    console.log("log it");
+    console.log("log in");
   } else {
     // Log out
     console.log("log out");

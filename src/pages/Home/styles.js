@@ -157,7 +157,7 @@ export const FirstColumn = styled.div`
       color: #7f8084;
       font-weight: bold;
 
-      span {
+      a {
         color: rgb(209, 77, 53);
         cursor: pointer;
 
