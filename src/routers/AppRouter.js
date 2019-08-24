@@ -1,6 +1,7 @@
 import React from "react";
 import GlobalStyle from "../styles/global";
 import Home from "../pages/Home/Home";
+import SignUp from "../pages/Home/SignUp";
 import NotFound from "../pages/NotFound/NotFound";
 import AddExpensePage from "../pages/AddExpensePage/AddExpensePage";
 
@@ -16,6 +17,7 @@ const AppRouter = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/2budget" component={Home} />
+        <Route path="/signup" component={SignUp} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/create" component={AddExpensePage} />
         <Route path="/edit/:id" component={EditExpensePage} />

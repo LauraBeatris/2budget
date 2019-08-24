@@ -86,10 +86,7 @@ class Home extends Component {
                 <img id="user" src={Lock} alt="user-cion" />
               </span>
             </div>
-            <p className="error" id="error-msg">
-              {" "}
-              {this.state.error}{" "}
-            </p>
+
             <p className="msg-form">Forgot Password?</p>
             <button type="submit" className="login-button">
               Login &gt;

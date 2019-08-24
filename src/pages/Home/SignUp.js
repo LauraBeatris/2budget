@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { HomeContainer, FirstColumn, SecondColumn, Google } from "./styles";
-import BudgetIllustration from "../../assets/budget_illustration.png";
+import { HomeContainer, FirstColumn } from "./styles-signup";
 import User from "../../assets/user.svg";
 import Lock from "../../assets/lock.svg";
 
@@ -60,8 +59,11 @@ class Home extends Component {
                   });
               }
             }}
-            className="form-container"
+            className="
+            form-container"
           >
+            <p id="subtitle"> Create your account </p>
+            <label>Type your email:</label>
             <div id="email">
               <input
                 type="text"
@@ -70,9 +72,10 @@ class Home extends Component {
                 placeholder="Email"
               />
               <span>
-                <img src={User} alt="user-cion" />
+                <img src={User} alt="user-icon" />
               </span>
             </div>
+            <label>Type your password:</label>
             <div id="password">
               <input
                 id="password"
@@ -89,55 +92,14 @@ class Home extends Component {
               {" "}
               {this.state.error}{" "}
             </p>
-            <p className="msg-form">Forgot Password?</p>
-            <button type="submit" className="login-button">
-              Login &gt;
-            </button>
+
+            <div id="button-container">
+              <button type="submit" className="login-button">
+                Sign Up &gt;
+              </button>
+            </div>
           </form>
-          <Google
-            onClick={ev => {
-              google_auth()
-                .then(res => {
-                  // This gives you a Google Access Token. You can use it to access the Google API.
-                  var token = res.credential.accessToken;
-                  // The signed-in user info.
-                  var user = res.user;
-
-                  // Storing user data
-                  localStorage.setItem({ "auth-token": token });
-                  localStorage.getItem({ user });
-
-                  this.setState({ error: null });
-                  // Redirecting the user
-                  this.props.history.push("/dashboard");
-                })
-                .catch(err => {
-                  var errorCode = err.code;
-                  var errorMessage = err.message;
-                  var email = err.email;
-                  var credential = err.credential;
-
-                  const errors = {
-                    "auth/user-not-found": "User not found"
-                  };
-
-                  //console.log(errors[err.code]);
-
-                  this.setState({ error: errors[errorCode] });
-
-                  console.log(err.code);
-                  console.log("User email used", email);
-                  console.log("Credential", credential);
-                });
-            }}
-            className="msg-google"
-          >
-            Or <span>Login with google</span>
-          </Google>
           <div className="msg-container">
-            <p>
-              Don't have an account? <span>Sign up</span>
-            </p>
             <p className="copy">
               Copyright ©{" "}
               <a

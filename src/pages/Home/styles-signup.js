@@ -24,17 +24,20 @@ export const FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 25%;
+  align-items: center;
 
   @media screen and (max-width: 1020px) {
     text-align: center;
     width: inherit;
   }
 
+  #email {
+    margin-bottom: 2rem;
+  }
+
   #password,
   #email {
     position: relative;
-    margin: 0 auto;
 
     input {
       border: 1px solid rgb(77, 81, 94);
@@ -74,6 +77,21 @@ export const FirstColumn = styled.div`
     display: flex;
     flex-direction: column;
 
+    #subtitle {
+      font-size: 2rem;
+      color: rgb(77, 81, 94);
+      margin-bottom: 4rem;
+      font-weight: bold;
+    }
+
+    label {
+      text-align: center;
+      color: rgb(77, 81, 94);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
     &--signup {
       display: flex;
       flex-direction: column;
@@ -82,10 +100,6 @@ export const FirstColumn = styled.div`
     }
 
     input {
-      &:first-child {
-        margin-bottom: 4rem;
-      }
-
       color: #a8a9af;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
       font-size: 1.5rem;
