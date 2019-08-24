@@ -46,6 +46,7 @@ class Home extends Component {
                     const token = res.credential.accessToken;
                     const user = res.user;
 
+                    this.setState({ error: null });
                     this.props.history.push("/dashboard");
                   })
                   .catch(err => {
@@ -106,8 +107,9 @@ class Home extends Component {
                   localStorage.setItem({ "auth-token": token });
                   localStorage.getItem({ user });
 
+                  this.setState({ error: null });
                   // Redirecting the user
-                  this.props.history.push("/");
+                  this.props.history.push("/dashboard");
                 })
                 .catch(err => {
                   var errorCode = err.code;
