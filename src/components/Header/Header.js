@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { HeaderStyled, Hamburger } from "./styles";
+import { connect } from "react-redux";
+import { startLogout } from "../../actions/auth";
 
 // Creating the header component to link between pages using NavLink components
-const Header = () => (
+export const Header = () => (
   <div className="navbar-wrapper">
     <HeaderStyled className="header">
       <div className="navbar-1">
@@ -51,7 +53,13 @@ const Header = () => (
             </ul>
           </nav>
         </Hamburger>
-        <NavLink className="logout" exact to="/" activeClassName="is-active">
+        <NavLink
+          onClick={startLogout()}
+          className="logout"
+          exact
+          to="/"
+          activeClassName="is-active"
+        >
           LogOut
         </NavLink>
       </div>
@@ -59,4 +67,20 @@ const Header = () => (
   </div>
 );
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+  startLogout: () =>
+    dispatch(
+      startLogout()
+        .then(() => {
+          console.log("logged out");
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    )
+});
+
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(Header);
