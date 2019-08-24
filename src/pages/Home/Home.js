@@ -160,7 +160,7 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  google_auth: dispatch(AuthActions.startLoginGoogle)
+  google_auth: () => dispatch(AuthActions.startLoginGoogle())
 });
 
 export default connect(
