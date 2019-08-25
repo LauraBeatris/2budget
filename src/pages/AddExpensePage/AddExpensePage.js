@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { addExpenseRequest } from "../../actions/expenses";
 import Helmet from "react-helmet";
 import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
-import Header from "../../components/Header/Header";
 
 import { AddContainer } from "./styles";
 
@@ -19,7 +18,6 @@ export class AddExpensePage extends Component {
         <Helmet>
           <title> 2Budget | Add expense </title>
         </Helmet>
-        <Header />
         <AddContainer>
           <h1 className="add-title">Add a expense</h1>
           <ExpenseForm
