@@ -10,6 +10,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import AddExpensePage from "../pages/AddExpensePage/AddExpensePage";
 import EditExpensePage from "../pages/EditExpensePage/EditExpensePage";
 import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 // We can use not only on app router but at other files
 export const history = createHistory();
@@ -20,9 +21,9 @@ const AppRouter = () => (
     <div>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/2budget" component={Home} />
-        <Route path="/signup" component={SignUp} />
+        <PublicRoute exact path="/" component={Home} />
+        <PublicRoute path="/2budget" component={Home} />
+        <PublicRoute path="/signup" component={SignUp} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/create" component={AddExpensePage} />
         <PrivateRoute path="/edit/:id" component={EditExpensePage} />
