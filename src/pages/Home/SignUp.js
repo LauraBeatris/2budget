@@ -11,7 +11,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null
+      error: null,
+      success: false
     };
   }
 
@@ -43,11 +44,16 @@ class Home extends Component {
                   )
                   .then(res => {
                     this.setState({ error: null });
-                    this.props.history.push("/");
+
+                    this.setState({ success: true });
+
+                    setTimeout(() => {
+                      this.props.history.push("/");
+                    }, 1500);
                   })
                   .catch(err => {
                     console.log("Error code: ", err);
-
+                    this.setState({ success: false });
                     // const errors = {
                     //   "auth/user-not-found": "User not found"
                     // };
@@ -84,12 +90,18 @@ class Home extends Component {
               <span>
                 <img id="user" src={Lock} alt="user-cion" />
               </span>
-            </div>
-            <p className="error" id="error-msg">
-              {" "}
-              {this.state.error ? this.state.error : null}{" "}
-            </p>
-
+            </div>{" "}
+            {this.state.error ? (
+              <p className="error" id="error-msg">
+                {" "}
+                this.state.error{" "}
+              </p>
+            ) : null}{" "}
+            {this.state.success ? (
+              <p className="success" id="success-msg">
+                Successfully signup <span>😊</span>
+              </p>
+            ) : null}
             <div id="button-container">
               <button type="submit" className="login-button">
                 Sign Up &gt;

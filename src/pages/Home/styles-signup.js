@@ -130,6 +130,13 @@ export const FirstColumn = styled.div`
       margin-top: 1rem;
     }
 
+    p#success-msg {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: green;
+      margin-top: 1rem;
+    }
+
     p.msg-form {
       margin-top: 2rem;
       font-size: 2rem;
