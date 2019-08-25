@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { HomeContainer, FirstColumn, SecondColumn, Google } from "./styles";
-import BudgetIllustration from "../../assets/budget_illustration.png";
-import User from "../../assets/user.svg";
-import Lock from "../../assets/lock.svg";
 import { Link } from "react-router-dom";
-
 import { firebase } from "../../firebase/firebase";
 import { connect } from "react-redux";
 import * as AuthActions from "../../actions/auth";
+import Helmet from "react-helmet";
+
+import BudgetIllustration from "../../assets/budget_illustration.png";
+import User from "../../assets/user.svg";
+import Lock from "../../assets/lock.svg";
 
 export class Home extends Component {
   constructor(props) {
@@ -21,6 +22,9 @@ export class Home extends Component {
     const { google_auth } = this.props;
     return (
       <HomeContainer>
+        <Helmet>
+          <title> 2Budget | Sign in </title>
+        </Helmet>
         <FirstColumn>
           {" "}
           <header>

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { firebase } from "../../firebase/firebase";
+import { connect } from "react-redux";
+import Helmet from "react-helmet";
+import * as AuthActions from "../../actions/auth";
+
 import { HomeContainer, FirstColumn } from "./styles-signup";
 import User from "../../assets/user.svg";
 import Lock from "../../assets/lock.svg";
-
-import { firebase } from "../../firebase/firebase";
-import { connect } from "react-redux";
-import * as AuthActions from "../../actions/auth";
 
 class Home extends Component {
   constructor(props) {
@@ -20,6 +21,9 @@ class Home extends Component {
     const { google_auth } = this.props;
     return (
       <HomeContainer>
+        <Helmet>
+          <title> 2Budget | Sign up </title>
+        </Helmet>
         <FirstColumn>
           {" "}
           <header>
