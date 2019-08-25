@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./firebase/firebase";
 import "react-dates/lib/css/_datepicker.css";
-import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
-import AppRouter from "./routers/AppRouter";
 import { firebase } from "./firebase/firebase";
 import { history } from "./routers/AppRouter";
-
 import { startSetExpenses } from "./actions/expenses";
+import { login, logout } from "./actions/auth";
+import AppRouter from "./routers/AppRouter";
+import configureStore from "./store/configureStore";
 
 const store = configureStore();
 
@@ -40,6 +40,9 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     // Log in
 
+    // Sending the id of the user to the authReducer
+    store.dispatch(login(user.uid));
+
     // Fetching expenses and rendering the app
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
@@ -51,6 +54,9 @@ firebase.auth().onAuthStateChanged(user => {
     }
   } else {
     // Log out
+
+    store.dispatch(logout());
+
     renderApp();
     history.push("/");
   }
