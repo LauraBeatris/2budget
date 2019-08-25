@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helmet from "react-helmet";
 import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
 import ExpenseForm from "../../components/ExpenseForm/ExpenseForm";
@@ -20,6 +21,9 @@ export class EditExpensePage extends Component {
     return (
       <div>
         <Header />
+        <Helmet>
+          <title> 2Budget | Edit Expense </title>
+        </Helmet>
         <EditContainer>
           <ExpenseForm
             type="Edit"
