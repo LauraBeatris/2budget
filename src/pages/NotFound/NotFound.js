@@ -1,33 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
+import { connect } from "react-redux";
+
 import { Container } from "./styles";
+import Header from "../../components/Header/Header";
 
 // Creating the not found page component
-class NotFound extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isAuth: false
-    };
-  }
+export const NotFound = ({ isAuthenticated }) => (
+  <div>
+    {isAuthenticated && <Header />}
+    <Container>
+      <h1> What are you doing here? </h1>
+      <Link to={isAuthenticated ? "/dashboard" : "/"}>Go Home</Link>
+    </Container>
+  </div>
+);
 
-  componentDidMount() {
-    localStorage.getItem("auth-token")
-      ? this.setState({ isAuth: true })
-      : this.setState({ isAuth: false });
-  }
+const mapStateToProps = state => ({
+  isAuthenticated: !!state.auth.uid
+});
 
-  render() {
-    return (
-      <div>
-        {this.state.isAuth && <Header />}
-        <Container>
-          <h1> What are you doing here? </h1>
-          <Link to={this.state.isAuth ? "/dashboard" : "/"}>Go Home</Link>
-        </Container>
-      </div>
-    );
-  }
-}
-export default NotFound;
+export default connect(mapStateToProps)(NotFound);
