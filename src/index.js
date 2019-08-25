@@ -6,6 +6,7 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import { firebase } from "./firebase/firebase";
+import { history } from "./routers/AppRouter";
 
 import { startSetExpenses } from "./actions/expenses";
 
@@ -24,23 +25,33 @@ const app = (
   </Provider>
 );
 
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(app, document.getElementById("root"));
+    hasRendered = true;
+  }
+};
+
 ReactDOM.render(<p> Loading... </p>, document.getElementById("root"));
 
-// When the expenses were already dispatched
-store.dispatch(startSetExpenses()).then(() => {
-  ReactDOM.render(app, document.getElementById("root"));
-});
-
-// Runs the callback function when the authentication state changes
-// This allow us to run this function every single time that the authentication
-// changes
-
 firebase.auth().onAuthStateChanged(user => {
+  // Redirecting the user and fetching data
   if (user) {
     // Log in
-    console.log("log in");
+
+    // Fetching expenses and rendering the app
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+    });
+
+    // Redirecting
+    if (history.location.pathname === "/") {
+      history.push("/dashboard");
+    }
   } else {
     // Log out
-    console.log("log out");
+    renderApp();
+    history.push("/");
   }
 });

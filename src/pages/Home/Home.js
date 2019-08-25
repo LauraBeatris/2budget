@@ -45,7 +45,6 @@ export class Home extends Component {
                   )
                   .then(res => {
                     this.setState({ error: null });
-                    this.props.history.push("/dashboard");
                   })
                   .catch(err => {
                     const errors = {
@@ -110,7 +109,6 @@ export class Home extends Component {
 
                       this.setState({ error: null });
                       // Redirecting the user
-                      this.props.history.push("/dashboard");
                     })
                     .catch(err => {
                       var errorCode = err.code;

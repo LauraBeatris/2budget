@@ -33,6 +33,7 @@
     "express": "^4.17.1",
     "firebase": "^6.3.5",
     "gh-pages": "^2.0.1",
+    "history": "^4.9.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-transform-stub": "^2.0.0",
     "moment": "2.18.1",
