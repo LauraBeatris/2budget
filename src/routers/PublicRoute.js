@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -10,14 +10,7 @@ export const PublicRoute = ({
   isAuthenticated ? (
     <Redirect to="/dashboard" />
   ) : (
-    <Route
-      {...rest}
-      component={props => (
-        <Fragment>
-          <Component {...props} />
-        </Fragment>
-      )}
-    />
+    <Route {...rest} component={props => <Component {...props} />} />
   );
 
 const mapStateToProps = state => ({
