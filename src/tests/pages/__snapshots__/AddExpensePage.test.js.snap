@@ -2,7 +2,7 @@
 
 exports[`should render AddExpensePage correctly 1`] = `
 <div>
-  <Header />
+  <Connect(Header) />
   <.sc-bxivhb>
     <h1
       className="add-title"

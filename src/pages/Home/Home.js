@@ -9,7 +9,7 @@ import { firebase } from "../../firebase/firebase";
 import { connect } from "react-redux";
 import * as AuthActions from "../../actions/auth";
 
-class Home extends Component {
+export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -93,40 +93,48 @@ class Home extends Component {
             </button>
           </form>
           <Google
+            id="google-auth"
             onClick={ev => {
-              google_auth()
-                .then(res => {
-                  // This gives you a Google Access Token. You can use it to access the Google API.
-                  var token = res.credential.accessToken;
-                  // The signed-in user info.
-                  var user = res.user;
+              {
+                process.env.NODE_ENV !== "test" &&
+                  google_auth()
+                    .then(res => {
+                      // This gives you a Google Access Token. You can use it to access the Google API.
+                      var token = res.credential.accessToken;
+                      // The signed-in user info.
+                      var user = res.user;
 
-                  // Storing user data
-                  localStorage.setItem({ "auth-token": token });
-                  localStorage.getItem({ user });
+                      // Storing user data
+                      localStorage.setItem({ "auth-token": token });
+                      localStorage.getItem({ user });
 
-                  this.setState({ error: null });
-                  // Redirecting the user
-                  this.props.history.push("/dashboard");
-                })
-                .catch(err => {
-                  var errorCode = err.code;
-                  var errorMessage = err.message;
-                  var email = err.email;
-                  var credential = err.credential;
+                      this.setState({ error: null });
+                      // Redirecting the user
+                      this.props.history.push("/dashboard");
+                    })
+                    .catch(err => {
+                      var errorCode = err.code;
+                      var errorMessage = err.message;
+                      var email = err.email;
+                      var credential = err.credential;
 
-                  const errors = {
-                    "auth/user-not-found": "User not found"
-                  };
+                      const errors = {
+                        "auth/user-not-found": "User not found"
+                      };
 
-                  //console.log(errors[err.code]);
+                      //console.log(errors[err.code]);
 
-                  this.setState({ error: errors[errorCode] });
+                      this.setState({ error: errors[errorCode] });
 
-                  console.log(err.code);
-                  console.log("User email used", email);
-                  console.log("Credential", credential);
-                });
+                      console.log(err.code);
+                      console.log("User email used", email);
+                      console.log("Credential", credential);
+                    });
+              }
+
+              {
+                process.env.NODE_ENV === "test" && google_auth();
+              }
             }}
             className="msg-google"
           >

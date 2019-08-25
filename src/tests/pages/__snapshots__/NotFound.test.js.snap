@@ -2,14 +2,15 @@
 
 exports[`should render NotFound correctly 1`] = `
 <div>
-  <Header />
-  <h1>
-     What are you doing here? 
-  </h1>
-  <Link
-    to="/dashboard"
-  >
-    Go Home
-  </Link>
+  <.sc-htpNat>
+    <h1>
+       What are you doing here? 
+    </h1>
+    <Link
+      to="/"
+    >
+      Go Home
+    </Link>
+  </.sc-htpNat>
 </div>
 `;

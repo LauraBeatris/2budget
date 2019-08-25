@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { startLogout } from "../../actions/auth";
 
 // Creating the header component to link between pages using NavLink components
-export const Header = () => (
+export const Header = ({ startLogout }) => (
   <div className="navbar-wrapper">
     <HeaderStyled className="header">
       <div className="navbar-1">
@@ -54,7 +54,7 @@ export const Header = () => (
           </nav>
         </Hamburger>
         <NavLink
-          onClick={startLogout()}
+          onClick={startLogout}
           className="logout"
           exact
           to="/"
@@ -68,16 +68,7 @@ export const Header = () => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  startLogout: () =>
-    dispatch(
-      startLogout()
-        .then(() => {
-          console.log("logged out");
-        })
-        .catch(err => {
-          console.log(err);
-        })
-    )
+  startLogout: () => dispatch(startLogout())
 });
 
 export default connect(

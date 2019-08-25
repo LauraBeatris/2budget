@@ -2,7 +2,7 @@
 
 exports[`should render EditExpansePage correctly 1`] = `
 <div>
-  <Header />
+  <Connect(Header) />
   <.sc-ifAKCX>
     <ExpenseForm
       expense={

@@ -92,6 +92,7 @@ exports[`should render Header correctly 1`] = `
         activeClassName="is-active"
         className="logout"
         exact={true}
+        onClick={[MockFunction]}
         to="/"
       >
         LogOut

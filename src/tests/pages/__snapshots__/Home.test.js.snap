@@ -16,6 +16,7 @@ exports[`should render homepage correctly 1`] = `
     </header>
     <form
       className="form-container"
+      onSubmit={[Function]}
     >
       <div
         id="email"
@@ -58,25 +59,44 @@ exports[`should render homepage correctly 1`] = `
         </span>
       </div>
       <p
+        className="error"
+        id="error-msg"
+      >
+         
+         
+      </p>
+      <p
         className="msg-form"
       >
         Forgot Password?
       </p>
-      <Link
+      <button
         className="login-button"
-        to="/dashboard"
+        type="submit"
       >
         Login &gt;
-      </Link>
+      </button>
     </form>
+    <.sc-bxivhb
+      className="msg-google"
+      id="google-auth"
+      onClick={[Function]}
+    >
+      Or 
+      <span>
+        Login with google
+      </span>
+    </.sc-bxivhb>
     <div
       className="msg-container"
     >
       <p>
         Don't have an account? 
-        <span>
+        <Link
+          to="/signup"
+        >
           Sign up
-        </span>
+        </Link>
       </p>
       <p
         className="copy"

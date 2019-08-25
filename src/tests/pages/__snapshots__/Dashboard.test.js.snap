@@ -2,7 +2,7 @@
 
 exports[`should render Dashboard correctly 1`] = `
 <div>
-  <Header />
+  <Connect(Header) />
   <.sc-EHOje>
     <label>
       Filters
