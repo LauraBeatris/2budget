@@ -2,13 +2,20 @@
 
 exports[`should render Dashboard correctly 1`] = `
 <div>
-  <Connect(Header) />
-  <.sc-EHOje>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+       2Budget | Dashboard 
+    </title>
+  </HelmetWrapper>
+  <.sc-bxivhb>
     <label>
       Filters
     </label>
     <Connect(ExpenseListFilter) />
     <Connect(ExpenseList) />
-  </.sc-EHOje>
+  </.sc-bxivhb>
 </div>
 `;

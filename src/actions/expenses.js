@@ -9,7 +9,9 @@ export const addExpense = expense => {
 };
 
 export const addExpenseRequest = (expenseData = {}) => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const { uid } = getState().auth;
+
     const {
       description = "",
       note = "",
@@ -25,7 +27,7 @@ export const addExpenseRequest = (expenseData = {}) => {
     };
     // After sending this to database -> dispatch the action to the store
     return database
-      .ref("expenses")
+      .ref(`users/${uid}/expenses`)
       .push(expense)
       .then(ref => {
         dispatch(
@@ -58,11 +60,12 @@ export const setExpenses = expenses => ({
 });
 
 export const startSetExpenses = () => {
-  return dispatch => {
+  return (dispatch, getState) => {
     const expenses = [];
+    const { uid } = getState().auth;
 
     return database
-      .ref("expenses")
+      .ref(`users/${uid}/expenses`)
       .once("value")
       .then(snapshot => {
         snapshot.forEach(childSnapshot => {
@@ -80,9 +83,11 @@ export const startSetExpenses = () => {
 export const startRemoveExpenses = ({ id } = {}) => {
   // This asyncronous function is responsable for doing a connection with
   // firebase and dispatching an action
-  return dispatch => {
+  return (dispatch, getState) => {
+    const { uid } = getState().auth;
+
     return database
-      .ref(`expenses/${id}`)
+      .ref(`users/${uid}/expenses/${id}`)
       .remove()
       .then(snapshot => {
         //console.log("expense removed");
@@ -92,10 +97,12 @@ export const startRemoveExpenses = ({ id } = {}) => {
 };
 
 export const startEditExpenses = (id, update) => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const { uid } = getState().auth;
+
     // Getting the reference of the expense from database and setting the new value
     return database
-      .ref(`expenses/${id}`)
+      .ref(`users/${uid}/expenses/${id}`)
       .update(update)
       .then(snapshot => {
         //expense edit

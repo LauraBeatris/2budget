@@ -2,8 +2,15 @@
 
 exports[`should render EditExpansePage correctly 1`] = `
 <div>
-  <Connect(Header) />
-  <.sc-ifAKCX>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+       2Budget | Edit Expense 
+    </title>
+  </HelmetWrapper>
+  <.sc-htpNat>
     <ExpenseForm
       expense={
         Object {
@@ -17,12 +24,12 @@ exports[`should render EditExpansePage correctly 1`] = `
       onSubmit={[Function]}
       type="Edit"
     />
-    <.sc-bxivhb
+    <.sc-bwzfXH
       id="remove-button"
       onClick={[Function]}
     >
       Remove
-    </.sc-bxivhb>
-  </.sc-ifAKCX>
+    </.sc-bwzfXH>
+  </.sc-htpNat>
 </div>
 `;

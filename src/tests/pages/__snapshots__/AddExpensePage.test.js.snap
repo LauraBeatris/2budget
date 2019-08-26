@@ -2,8 +2,15 @@
 
 exports[`should render AddExpensePage correctly 1`] = `
 <div>
-  <Connect(Header) />
-  <.sc-bxivhb>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+       2Budget | Add expense 
+    </title>
+  </HelmetWrapper>
+  <.sc-bwzfXH>
     <h1
       className="add-title"
     >
@@ -13,6 +20,6 @@ exports[`should render AddExpensePage correctly 1`] = `
       onSubmit={[Function]}
       type="Add"
     />
-  </.sc-bxivhb>
+  </.sc-bwzfXH>
 </div>
 `;
