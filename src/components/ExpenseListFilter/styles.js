@@ -34,6 +34,7 @@ export const FilterContainer = styled.div`
       padding: 0.5rem 1rem;
       text-transform: lowercase;
       font-style: italic;
+      background-color: #fff;
 
       option:hover {
         background-color: rgb(77, 81, 94, 0.9);

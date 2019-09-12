@@ -65,7 +65,7 @@ export const FormContainer = styled.div`
     text-align: center;
     font-size: 2rem;
     color: #6dbfcc;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 
     &::placeholder {
       font-weight: bold;
@@ -75,14 +75,14 @@ export const FormContainer = styled.div`
   }
 
   button.btn-submit {
-    margin-top: 3rem;
+    margin-top: 4rem;
     background-color: #6dbfcc;
     border: none;
     font-size: 1.6rem;
     font-weight: bold;
     padding: 2rem 4rem;
     color: white;
-    border-radius: 100px;
+    border-radius: 20px;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-decoration: none;

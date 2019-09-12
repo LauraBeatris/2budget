@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const ButtonRemove = styled.button`
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   background-color: #6dbfcc;
   border: none;
   font-size: 1.6rem;
   font-weight: bold;
   padding: 2rem 4rem;
   color: white;
-  border-radius: 100px;
+  border-radius: 20px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   cursor: pointer;
   text-decoration: none;
@@ -26,4 +26,5 @@ export const ButtonRemove = styled.button`
 
 export const EditContainer = styled.div`
   text-align: center;
+  margin-top: 5rem;
 `;
