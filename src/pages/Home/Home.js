@@ -183,7 +183,6 @@ export class Home extends Component {
                 }}
                 alt="google"
               />
-              <img src={Twitter} alt="twitter" />
               <img src={Github} onClick={this.handleGithubAuth} alt="github" />
             </div>
           </div>

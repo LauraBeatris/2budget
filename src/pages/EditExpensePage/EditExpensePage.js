@@ -43,7 +43,7 @@ export class EditExpensePage extends Component {
         bottom: "auto",
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
-        padding: "4px 2px"
+        padding: "8px 2px"
       }
     };
 
