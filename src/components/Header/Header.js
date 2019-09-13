@@ -50,7 +50,12 @@ export const Header = ({ startLogout }) => (
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/" activeClassName="is-active">
+                <NavLink
+                  onClick={startLogout}
+                  exact
+                  to="/"
+                  activeClassName="is-active"
+                >
                   LogOut
                 </NavLink>
               </li>
