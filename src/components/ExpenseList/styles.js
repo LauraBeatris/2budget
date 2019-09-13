@@ -11,13 +11,19 @@ export const ListContainer = styled.div`
 
   p {
     font-size: 1.6rem;
-    font-weight: lighter;
+    font-weight: 600;
+    color: rgb(77, 81, 94);
+
+    &:last-child {
+      font-style: italic;
+    }
   }
 
   .summary {
     line-height: 1;
     margin-bottom: 4rem;
     color: #6dbfcc;
+
     h1.total-amount {
       font-weight: 400;
       font-size: 6.5rem;
@@ -26,7 +32,7 @@ export const ListContainer = styled.div`
 
     h2 {
       font-size: 2rem;
-      text-transform: uppercase;
+
       font-weight: bold;
     }
 
