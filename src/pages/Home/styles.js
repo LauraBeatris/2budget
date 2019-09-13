@@ -223,7 +223,7 @@ export const FirstColumn = styled.div`
     font-size: 2rem;
     color: #7f8084;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   #social-medias-container {
@@ -240,10 +240,10 @@ export const FirstColumn = styled.div`
 
     img {
       width: 2.5rem;
-      &:not(:first-child){
+      &:not(:first-child) {
         margin-left: 1rem;
       }
-     
+
       cursor: pointer;
       transition: all 0.25s;
 

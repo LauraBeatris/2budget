@@ -11,10 +11,15 @@ export const HeaderStyled = styled.header`
   padding: 2rem 4rem;
   max-width: 100vw;
 
+  #logo-container {
+    text-decoration: none;
+  }
+
   h1.logo {
     color: rgb(77, 81, 94);
     font-size: 2.2rem;
     text-transform: uppercase;
+    cursor: pointer;
 
     span {
       color: #6dbfcc;

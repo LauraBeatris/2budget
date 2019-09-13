@@ -4,14 +4,18 @@ import { HeaderStyled, Hamburger } from "./styles";
 import { connect } from "react-redux";
 import { startLogout } from "../../actions/auth";
 
+import { Link } from "react-router-dom";
+
 // Creating the header component to link between pages using NavLink components
 export const Header = ({ startLogout }) => (
   <div className="navbar-wrapper">
     <HeaderStyled className="header">
       <div className="navbar-1">
-        <h1 className="logo">
-          <span>2</span>Budget
-        </h1>
+        <Link id="logo-container" to="/dashboard">
+          <h1 className="logo">
+            <span>2</span>Budget
+          </h1>
+        </Link>
         <nav>
           <NavLink exact to="/dashboard" activeClassName="is-active">
             Dashboard
