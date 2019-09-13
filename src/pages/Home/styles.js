@@ -226,6 +226,13 @@ export const FirstColumn = styled.div`
     font-size: 1.4rem;
   }
 
+  #social-medias-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   #social-medias {
     display: flex;
     flex-direction: row;
@@ -233,7 +240,10 @@ export const FirstColumn = styled.div`
 
     img {
       width: 2.5rem;
-      margin-left: 1rem;
+      &:not(:first-child){
+        margin-left: 1rem;
+      }
+     
       cursor: pointer;
       transition: all 0.25s;
 

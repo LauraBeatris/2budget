@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(user => {
   // Redirecting the user and fetching data
   if (user) {
     // Log in
-
+    console.log('login')
     // Sending the id of the user to the authReducer
     store.dispatch(login(user.uid));
 
@@ -54,7 +54,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
   } else {
     // Log out
-
+    console.log('logout')
     store.dispatch(logout());
 
     renderApp();
