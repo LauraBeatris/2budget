@@ -8,7 +8,6 @@ import Helmet from "react-helmet";
 
 import BudgetIllustration from "../../assets/budget_illustration.png";
 import Github from "../../assets/github-logo.png";
-import Twitter from "../../assets/twitter.png";
 import GoogleIcon from "../../assets/google.png";
 import User from "../../assets/user.svg";
 import Lock from "../../assets/lock.svg";
@@ -42,9 +41,11 @@ export class Home extends Component {
         var errorMessage = err.message;
         var email = err.email;
         var credential = err.credential;
-
+        console.log(credential);
         const errors = {
-          "auth/user-not-found": "User not found"
+          "auth/user-not-found": "User not found",
+          "auth/account-exists-with-different-credential":
+            "Email already in use with another account"
         };
 
         //console.log(errors[err.code]);
