@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { firebase } from "../../firebase/firebase";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Helmet from "react-helmet";
 import * as AuthActions from "../../actions/auth";
 
@@ -27,6 +28,9 @@ class ForgotPassword extends Component {
         <FirstColumn>
           {" "}
           <header>
+            <Link id="back-button" to="/">
+              &#8629; Back
+            </Link>
             <h1 className="home-title">
               <span>2</span>Budget
             </h1>

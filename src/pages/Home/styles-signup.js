@@ -31,6 +31,20 @@ export const FirstColumn = styled.div`
     width: inherit;
   }
 
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #back-button {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgb(77, 81, 94);
+      text-decoration: underline;
+    }
+  }
+
   #email {
     margin-bottom: 2rem;
   }
@@ -151,7 +165,7 @@ export const FirstColumn = styled.div`
     }
 
     .login-button {
-      margin-top: 3rem;
+      margin-top: 4rem;
       background-color: #6dbfcc;
       border: none;
       font-size: 1.8rem;

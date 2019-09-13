@@ -2,7 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./firebase/firebase";
 import "react-dates/lib/css/_datepicker.css";
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
 import { Provider } from "react-redux";
+import { Loading } from "./styles/loading";
 import { firebase } from "./firebase/firebase";
 import { history } from "./routers/AppRouter";
 import { startSetExpenses } from "./actions/expenses";
@@ -33,13 +36,24 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p> Loading... </p>, document.getElementById("root"));
+ReactDOM.render(
+  <Loading>
+    {" "}
+    <ClipLoader
+      sizeUnit={"px"}
+      size={100}
+      color={"#6dbfcc"}
+      loading={true}
+    />{" "}
+  </Loading>,
+  document.getElementById("root")
+);
 
 firebase.auth().onAuthStateChanged(user => {
   // Redirecting the user and fetching data
   if (user) {
     // Log in
-    console.log('login')
+    console.log("login");
     // Sending the id of the user to the authReducer
     store.dispatch(login(user.uid));
 
@@ -54,7 +68,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
   } else {
     // Log out
-    console.log('logout')
+    console.log("logout");
     store.dispatch(logout());
 
     renderApp();

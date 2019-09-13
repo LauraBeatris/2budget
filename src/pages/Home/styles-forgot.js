@@ -14,6 +14,20 @@ export const HomeContainer = styled.section`
     margin: 4rem auto;
   }
 
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #back-button {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgb(77, 81, 94);
+      text-decoration: underline;
+    }
+  }
+
   .google-msg {
     p span {
       margin-top: 2rem;
@@ -87,7 +101,7 @@ export const FirstColumn = styled.div`
     label {
       text-align: center;
       color: rgb(77, 81, 94);
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 0.5rem;
       font-weight: 700;
     }
@@ -147,7 +161,7 @@ export const FirstColumn = styled.div`
     }
 
     .login-button {
-      margin-top: 3rem;
+      margin-top: 4rem;
       background-color: #6dbfcc;
       border: none;
       font-size: 1.5rem;
@@ -183,7 +197,7 @@ export const FirstColumn = styled.div`
     text-align: center;
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       color: #7f8084;
       font-weight: bold;
 

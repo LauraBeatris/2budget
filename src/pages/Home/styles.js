@@ -64,7 +64,7 @@ export const FirstColumn = styled.div`
     color: rgb(77, 81, 94);
     font-size: 4.5rem;
     text-transform: uppercase;
-    margin-bottom: 4rem;
+    margin: 4rem;
 
     span {
       color: #6dbfcc;
@@ -123,7 +123,7 @@ export const FirstColumn = styled.div`
       font-size: 1.8rem;
       color: #7f8084;
       font-weight: bold;
-
+      text-decoration: none;
       cursor: pointer;
 
       &:hover {
@@ -171,7 +171,7 @@ export const FirstColumn = styled.div`
     text-align: center;
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       color: #7f8084;
       font-weight: bold;
 
@@ -197,7 +197,7 @@ export const FirstColumn = styled.div`
       margin: 2rem auto;
 
       p {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
       }
     }
   }
