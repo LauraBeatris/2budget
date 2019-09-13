@@ -35,7 +35,7 @@ export const ModalContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem;
+  padding: 1rem;
 
   p {
     color: #6dbfcc;
