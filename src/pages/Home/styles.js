@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.section`
   background-color: $background-color;
-  padding: 8rem 18rem;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 
   @media screen and (max-width: 1040px) {
-    margin: 4rem auto;
+    margin: 2rem auto;
   }
 
   .google-msg {
@@ -116,9 +118,9 @@ export const FirstColumn = styled.div`
       margin: 1rem 0rem;
     }
 
-    p.msg-form {
+    a.msg-form {
       margin-top: 0.5rem;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #7f8084;
       font-weight: bold;
 
@@ -131,17 +133,22 @@ export const FirstColumn = styled.div`
 
     .login-button {
       margin-top: 2rem;
-      background-color: #6dbfcc;
-      border: none;
-      font-size: 1.8rem;
+      background-color: rgb(109, 191, 204);
+      font-size: 2rem;
       font-weight: bold;
-      padding: 2rem 4rem;
       color: white;
-      border-radius: 100px;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 2rem;
       cursor: pointer;
+      border-width: initial;
+      border-style: none;
+      border-color: initial;
+      border-image: initial;
+      padding: 2rem 4rem;
+      border-radius: 100px;
       text-decoration: none;
-      transition: all 0.5s;
+      transition: all 0.5s ease 0s;
+      width: 60%;
+      align-self: center;
 
       &:hover {
         transform: translateY(-6px);
@@ -187,7 +194,7 @@ export const FirstColumn = styled.div`
       }
     }
     @media screen and (max-width: 1040px) {
-      margin: 10rem auto;
+      margin: 2rem auto;
 
       p {
         font-size: 1.9rem;
@@ -220,10 +227,9 @@ export const FirstColumn = styled.div`
 
   #login-msg {
     margin: 1rem 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #7f8084;
     font-weight: bold;
-    font-size: 1.6rem;
   }
 
   #social-medias-container {

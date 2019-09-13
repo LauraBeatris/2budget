@@ -18,6 +18,12 @@ export const startLoginGithub = () => {
   };
 };
 
+export const startPasswordReset = emailAddress => {
+  return dispatch => {
+    return firebase.auth().sendPasswordResetEmail(emailAddress);
+  };
+};
+
 export const logout = () => ({
   type: "LOGOUT"
 });

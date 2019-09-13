@@ -130,7 +130,9 @@ export class Home extends Component {
               {" "}
               {this.state.error ? this.state.error : null}{" "}
             </p>
-            <p className="msg-form">Forgot Password?</p>
+            <Link to="forgot-password" className="msg-form">
+              Forgot Password?
+            </Link>
             <button type="submit" className="login-button">
               Login &gt;
             </button>

@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import { Router, Route, Switch } from "react-router-dom";
 
 import Home from "../pages/Home/Home";
+import ForgotPassword from "../pages/Home/ForgotPassword";
 import SignUp from "../pages/Home/SignUp";
 import NotFound from "../pages/NotFound/NotFound";
 import AddExpensePage from "../pages/AddExpensePage/AddExpensePage";
@@ -24,6 +25,7 @@ const AppRouter = () => (
         <PublicRoute exact path="/" component={Home} />
         <PublicRoute path="/2budget" component={Home} />
         <PublicRoute path="/signup" component={SignUp} />
+        <PublicRoute path="/forgot-password" component={ForgotPassword} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/create" component={AddExpensePage} />
         <PrivateRoute path="/edit/:id" component={EditExpensePage} />

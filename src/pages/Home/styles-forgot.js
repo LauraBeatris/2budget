@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.section`
   background-color: $background-color;
-  padding: 8rem 18rem;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 
   @media screen and (max-width: 1040px) {
     margin: 4rem auto;
@@ -32,10 +34,9 @@ export const FirstColumn = styled.div`
   }
 
   #email {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
   }
 
-  #password,
   #email {
     position: relative;
 
@@ -44,8 +45,7 @@ export const FirstColumn = styled.div`
     }
   }
 
-  #email,
-  #password {
+  #email {
     span {
       img {
         width: 20px;
@@ -87,7 +87,7 @@ export const FirstColumn = styled.div`
     label {
       text-align: center;
       color: rgb(77, 81, 94);
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
       font-weight: 700;
     }
@@ -115,12 +115,8 @@ export const FirstColumn = styled.div`
       }
 
       @media screen and (max-width: 1040px) {
-        width: 75vw;
+        width: 70vw;
       }
-    }
-
-    #password {
-      background-image: url("../../assets/lock.svg");
     }
 
     p#error-msg {
@@ -154,7 +150,7 @@ export const FirstColumn = styled.div`
       margin-top: 3rem;
       background-color: #6dbfcc;
       border: none;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: bold;
       padding: 2rem 4rem;
       color: white;
@@ -174,14 +170,16 @@ export const FirstColumn = styled.div`
       }
 
       @media screen and (max-width: 1040px) {
-        width: 50vw;
+        width: 70vw;
         margin: 3rem auto;
+        font-size: 2rem;
+        padding: 1rem 2rem;
       }
     }
   }
 
   div.msg-container {
-    margin-top: 5rem;
+    margin-top: 2rem;
     text-align: center;
 
     p {
@@ -233,10 +231,6 @@ export const FirstColumn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    button {
-      width: 70%;
-    }
   }
 
   #form-container-signup {

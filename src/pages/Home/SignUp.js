@@ -112,18 +112,6 @@ class Home extends Component {
               </button>
             </div>
           </form>
-          <div className="msg-container">
-            <p className="copy">
-              Copyright ©{" "}
-              <a
-                href="https://github.com/LauraBeatris"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Laura Beatris{" "}
-              </a>
-            </p>
-          </div>
         </FirstColumn>
       </HomeContainer>
     );
