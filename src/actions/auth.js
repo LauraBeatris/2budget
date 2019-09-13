@@ -1,4 +1,4 @@
-import { firebase, provider } from "../firebase/firebase";
+import { firebase, provider, githubProvider } from "../firebase/firebase";
 
 export const login = uid => ({
   type: "LOGIN",
@@ -9,6 +9,12 @@ export const startLoginGoogle = () => {
   return dispatch => {
     // Signing in with a pop up,
     return firebase.auth().signInWithPopup(provider);
+  };
+};
+
+export const startLoginGithub = () => {
+  return dispatch => {
+    return firebase.auth().signInWithPopup(githubProvider);
   };
 };
 

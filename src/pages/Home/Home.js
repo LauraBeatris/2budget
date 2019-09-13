@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HomeContainer, FirstColumn, SecondColumn, Google } from "./styles";
+import { HomeContainer, FirstColumn, SecondColumn } from "./styles";
 import { Link } from "react-router-dom";
 import { firebase } from "../../firebase/firebase";
 import { connect } from "react-redux";
@@ -7,6 +7,10 @@ import * as AuthActions from "../../actions/auth";
 import Helmet from "react-helmet";
 
 import BudgetIllustration from "../../assets/budget_illustration.png";
+import Github from "../../assets/github-logo.png";
+import Facebook from "../../assets/facebook.png";
+import Twitter from "../../assets/twitter.png";
+import GoogleIcon from "../../assets/google.png";
 import User from "../../assets/user.svg";
 import Lock from "../../assets/lock.svg";
 
@@ -17,6 +21,42 @@ export class Home extends Component {
       error: null
     };
   }
+
+  handleGithubAuth = () => {
+    this.props
+      .github_auth()
+      .then(res => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = res.credential.accessToken;
+        // The signed-in user info.
+        var user = res.user;
+
+        // Storing user data
+        localStorage.setItem({ "auth-token": token });
+        localStorage.getItem({ user });
+
+        this.setState({ error: null });
+        // Redirecting the user
+      })
+      .catch(err => {
+        var errorCode = err.code;
+        var errorMessage = err.message;
+        var email = err.email;
+        var credential = err.credential;
+
+        const errors = {
+          "auth/user-not-found": "User not found"
+        };
+
+        //console.log(errors[err.code]);
+
+        this.setState({ error: errors[errorCode] });
+
+        console.log(err.code);
+        console.log("User email used", email);
+        console.log("Credential", credential);
+      });
+  };
 
   render() {
     const { google_auth } = this.props;
@@ -95,53 +135,58 @@ export class Home extends Component {
               Login &gt;
             </button>
           </form>
-          <Google
-            id="google-auth"
-            onClick={ev => {
-              {
-                process.env.NODE_ENV !== "test" &&
-                  google_auth()
-                    .then(res => {
-                      // This gives you a Google Access Token. You can use it to access the Google API.
-                      var token = res.credential.accessToken;
-                      // The signed-in user info.
-                      var user = res.user;
+          <p id="login-msg"> Or login with </p>
+          <div id="social-medias">
+            <img
+              src={GoogleIcon}
+              id="google-auth"
+              onClick={ev => {
+                {
+                  process.env.NODE_ENV !== "test" &&
+                    google_auth()
+                      .then(res => {
+                        // This gives you a Google Access Token. You can use it to access the Google API.
+                        var token = res.credential.accessToken;
+                        // The signed-in user info.
+                        var user = res.user;
 
-                      // Storing user data
-                      localStorage.setItem({ "auth-token": token });
-                      localStorage.getItem({ user });
+                        // Storing user data
+                        localStorage.setItem({ "auth-token": token });
+                        localStorage.getItem({ user });
 
-                      this.setState({ error: null });
-                      // Redirecting the user
-                    })
-                    .catch(err => {
-                      var errorCode = err.code;
-                      var errorMessage = err.message;
-                      var email = err.email;
-                      var credential = err.credential;
+                        this.setState({ error: null });
+                        // Redirecting the user
+                      })
+                      .catch(err => {
+                        var errorCode = err.code;
+                        var errorMessage = err.message;
+                        var email = err.email;
+                        var credential = err.credential;
 
-                      const errors = {
-                        "auth/user-not-found": "User not found"
-                      };
+                        const errors = {
+                          "auth/user-not-found": "User not found"
+                        };
 
-                      //console.log(errors[err.code]);
+                        //console.log(errors[err.code]);
 
-                      this.setState({ error: errors[errorCode] });
+                        this.setState({ error: errors[errorCode] });
 
-                      console.log(err.code);
-                      console.log("User email used", email);
-                      console.log("Credential", credential);
-                    });
-              }
+                        console.log(err.code);
+                        console.log("User email used", email);
+                        console.log("Credential", credential);
+                      });
+                }
 
-              {
-                process.env.NODE_ENV === "test" && google_auth();
-              }
-            }}
-            className="msg-google"
-          >
-            Or <span>Login with google</span>
-          </Google>
+                {
+                  process.env.NODE_ENV === "test" && google_auth();
+                }
+              }}
+              alt="google"
+            />
+            <img src={Twitter} alt="twitter" />
+            <img src={Facebook} alt="facebook" />
+            <img src={Github} onClick={this.handleGithubAuth} alt="github" />
+          </div>
           <div className="msg-container">
             <p>
               Don't have an account? <Link to="/signup">Sign up</Link>
@@ -168,7 +213,8 @@ export class Home extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  google_auth: () => dispatch(AuthActions.startLoginGoogle())
+  google_auth: () => dispatch(AuthActions.startLoginGoogle()),
+  github_auth: () => dispatch(AuthActions.startLoginGithub())
 });
 
 export default connect(

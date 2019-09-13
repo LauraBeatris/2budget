@@ -218,6 +218,32 @@ export const FirstColumn = styled.div`
     }
   }
 
+  #login-msg {
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: #7f8084;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  #social-medias {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+      width: 2.5rem;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: all 0.25s;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+    }
+  }
+
   #form-container-signup {
     display: flex;
     flex-direction: column;
