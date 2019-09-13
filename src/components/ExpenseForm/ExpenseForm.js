@@ -57,7 +57,7 @@ export default class ExpenseForm extends Component {
     // Checking if there's a description and a amount
     if (!this.state.description || !this.state.amount) {
       // Set error state equal to 'Please provide description and amount'
-      const error = "Please provide description and amount";
+      const error = "Please, provide description and amount";
       this.setState({ error });
     } else {
       // Clear the error

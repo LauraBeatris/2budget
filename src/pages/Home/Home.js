@@ -5,7 +5,7 @@ import { firebase } from "../../firebase/firebase";
 import { connect } from "react-redux";
 import * as AuthActions from "../../actions/auth";
 import Helmet from "react-helmet";
-
+import ClipLoader from "react-spinners/ClipLoader";
 import BudgetIllustration from "../../assets/budget_illustration.png";
 import Github from "../../assets/github-logo.png";
 import GoogleIcon from "../../assets/google.png";
@@ -16,11 +16,14 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null
+      error: null,
+      loading: false
     };
   }
 
   handleGithubAuth = () => {
+    this.setState({ loading: true });
+
     this.props
       .github_auth()
       .then(res => {
@@ -34,11 +37,9 @@ export class Home extends Component {
         localStorage.getItem({ user });
 
         this.setState({ error: null });
-        // Redirecting the user
       })
       .catch(err => {
         var errorCode = err.code;
-        var errorMessage = err.message;
         var email = err.email;
         var credential = err.credential;
         console.log(credential);
@@ -55,7 +56,8 @@ export class Home extends Component {
         console.log(err.code);
         console.log("User email used", email);
         console.log("Credential", credential);
-      });
+      })
+      .then(() => this.setState({ loading: false }));
   };
 
   render() {
@@ -81,6 +83,7 @@ export class Home extends Component {
               } else if (!this.email.value) {
                 this.setState({ error: "Empty email" });
               } else {
+                this.setState({ loading: true });
                 firebase
                   .auth()
                   .signInWithEmailAndPassword(
@@ -98,7 +101,8 @@ export class Home extends Component {
                     console.log(err.code);
                     this.setState({ error: errors[err.code] });
                     console.log("Error message: ", err.message);
-                  });
+                  })
+                  .then(() => this.setState({ loading: false }));
               }
             }}
             className="form-container"
@@ -134,7 +138,16 @@ export class Home extends Component {
               Forgot Password?
             </Link>
             <button type="submit" className="login-button">
-              Login &gt;
+              {!this.state.loading ? (
+                `Login`
+              ) : (
+                <ClipLoader
+                  sizeUnit={"px"}
+                  size={15}
+                  color={"#fff"}
+                  loading={this.state.loading}
+                />
+              )}
             </button>
           </form>
           <div id="social-medias-container">
@@ -162,7 +175,6 @@ export class Home extends Component {
                         })
                         .catch(err => {
                           var errorCode = err.code;
-                          var errorMessage = err.message;
                           var email = err.email;
                           var credential = err.credential;
 

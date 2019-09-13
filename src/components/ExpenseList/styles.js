@@ -39,10 +39,9 @@ export const ListContainer = styled.div`
     .moment,
     .quantity {
       font-size: 1.8rem;
-
       margin-bottom: 1rem;
-      text-transform: uppercase;
-      font-weight: 500;
+      font-weight: bold;
+      font-style: italic;
     }
   }
 

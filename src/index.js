@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./firebase/firebase";
 import "react-dates/lib/css/_datepicker.css";
-import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Provider } from "react-redux";
 import { Loading } from "./styles/loading";
@@ -38,13 +37,7 @@ const renderApp = () => {
 
 ReactDOM.render(
   <Loading>
-    {" "}
-    <ClipLoader
-      sizeUnit={"px"}
-      size={100}
-      color={"#6dbfcc"}
-      loading={true}
-    />{" "}
+    <ClipLoader sizeUnit={"px"} size={100} color={"#6dbfcc"} loading={true} />
   </Loading>,
   document.getElementById("root")
 );
