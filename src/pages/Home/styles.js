@@ -117,7 +117,7 @@ export const FirstColumn = styled.div`
     }
 
     p.msg-form {
-      margin-top: 2rem;
+      margin-top: 0.5rem;
       font-size: 2rem;
       color: #7f8084;
       font-weight: bold;
@@ -130,7 +130,7 @@ export const FirstColumn = styled.div`
     }
 
     .login-button {
-      margin-top: 3rem;
+      margin-top: 2rem;
       background-color: #6dbfcc;
       border: none;
       font-size: 1.8rem;
@@ -154,7 +154,7 @@ export const FirstColumn = styled.div`
 
       @media screen and (max-width: 1040px) {
         width: 50vw;
-        margin: 3rem auto;
+        margin: 1.5rem auto;
       }
     }
   }
@@ -187,10 +187,10 @@ export const FirstColumn = styled.div`
       }
     }
     @media screen and (max-width: 1040px) {
-      margin: 4.5rem auto;
+      margin: 10rem auto;
 
       p {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
     }
   }
