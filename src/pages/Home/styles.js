@@ -25,8 +25,9 @@ export const HomeContainer = styled.section`
 export const FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-  width: 25%;
+  width: 40%;
 
   @media screen and (max-width: 1020px) {
     text-align: center;
@@ -53,10 +54,6 @@ export const FirstColumn = styled.div`
       position: absolute;
       top: 10px;
       left: 5%;
-
-      @media screen and (max-width: 1020px) {
-        left: 2.5%;
-      }
     }
   }
 
@@ -75,6 +72,7 @@ export const FirstColumn = styled.div`
   form.form-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     &--signup {
       display: flex;
@@ -87,6 +85,7 @@ export const FirstColumn = styled.div`
       &:first-child {
         margin-bottom: 4rem;
       }
+      width: 75%;
 
       color: #a8a9af;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -100,10 +99,6 @@ export const FirstColumn = styled.div`
 
       &::placeholder {
         color: #a8a9af;
-      }
-
-      @media screen and (max-width: 1040px) {
-        width: 75vw;
       }
     }
 
@@ -144,10 +139,10 @@ export const FirstColumn = styled.div`
       border-color: initial;
       border-image: initial;
       padding: 2rem 4rem;
+      width: 75%;
       border-radius: 100px;
       text-decoration: none;
       transition: all 0.5s ease 0s;
-      width: 60%;
       align-self: center;
 
       &:hover {
@@ -159,10 +154,7 @@ export const FirstColumn = styled.div`
         box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
       }
 
-      @media screen and (max-width: 1040px) {
-        width: 50vw;
-        margin: 1.5rem auto;
-      }
+   
     }
   }
 
@@ -285,21 +277,25 @@ export const FirstColumn = styled.div`
         color: #a8a9af;
       }
 
-      @media screen and (max-width: 1040px) {
-        width: 75vw;
-      }
+
     }
   }
 `;
 
 export const SecondColumn = styled.div`
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
   img {
     border-radius: 100px;
-    margin-left: 100px;
+    padding-right: 5rem;
     height: 50rem;
   }
 
-  @media screen and (max-width: 1040px) {
+  @media screen and (max-width: 1080px) {
     display: none;
   }
 `;

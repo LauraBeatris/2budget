@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.section`
   background-color: $background-color;
-  padding: 8rem 18rem;
-
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 
   @media screen and (max-width: 1040px) {
     margin: 4rem auto;
