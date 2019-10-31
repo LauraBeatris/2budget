@@ -9,6 +9,6 @@
 You can clone it and run:
 
 ```shell
-npm install
-npm run start
+yarn install
+yarn start
 ```
