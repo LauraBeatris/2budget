@@ -1,14 +1,53 @@
+<h1 align="center">
+  <img alt="2Budget" title="2Budget" src=".github/logo.png" width="200px" />
+</h1>
 
-# 2Budget
+<h3 align="center">
+  ReactJS Application for Budget Management 
+</h3>
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LauraBeatris/goeat-api?color=yellow">
+
+  <a href="https://www.linkedin.com/in/laurabeatris/">
+    <img alt="Made by Laura Beatris" src="https://img.shields.io/badge/made%20by-laura%20beatris-yellow">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/licence-MIT-yellow">
+
+  <a href="https://github.com/LauraBeatris/goeat-api/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/LauraBeatris/goeat-api?style=social">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#rocket-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#ballot_box_with_check-goals">Goals</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#checkered_flag-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licence">Licence</a>
+</p>
+
+<hr>
+
+## :rocket: About the project
+
+<hr>
+
+## :ballot_box_with_check: Goals
+
+<hr>
+
+## :checkered_flag: Installation 
+
+<br>
+
+
+## :memo: Licence
+
+MIT Licence. See the file [LICENSE](LICENSE.md) for more details.
+
 ---
-<h2> Technologies/Libraries: React, Redux, Styled Components, MomentJS, React-Dates </h2>
 
+If you have some problem with the documentation, just send a pull request that i'll be happy to help. 😃
 
-###  [View live version](https://twobudget.herokuapp.com/) 🚀
-
-You can clone it and run:
-
-```shell
-yarn install
-yarn start
-```
+Made with ♥ by Laura :wave: [See my linkedin!](https://www.linkedin.com/in/laurabeatris/)
