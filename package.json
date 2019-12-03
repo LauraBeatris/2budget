@@ -36,7 +36,7 @@
     "history": "^4.9.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-transform-stub": "^2.0.0",
-    "moment": "2.18.1",
+    "moment": "2.19.3",
     "node-sass": "^4.12.0",
     "numeral": "^2.0.6",
     "polyfill": "^0.1.0",
