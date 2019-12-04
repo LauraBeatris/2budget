@@ -39,6 +39,15 @@
 
 ## :checkered_flag: Installation 
 
+Install the dependecies 
+
+``` 
+  yarn install 
+```
+And then, run locally 
+``` 
+  yarn start
+```
 <br>
 
 
