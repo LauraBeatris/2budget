@@ -7,16 +7,16 @@
 </h3>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LauraBeatris/goeat-api?color=yellow">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LauraBeatris/2budget">
 
   <a href="https://www.linkedin.com/in/laurabeatris/">
-    <img alt="Made by Laura Beatris" src="https://img.shields.io/badge/made%20by-laura%20beatris-yellow">
+    <img alt="Made by Laura Beatris" src="https://img.shields.io/badge/made%20by-laura%20beatris-blue">
   </a>
 
-  <img alt="License" src="https://img.shields.io/badge/licence-MIT-yellow">
+  <img alt="License" src="https://img.shields.io/badge/licence-MIT-blue">
 
-  <a href="https://github.com/LauraBeatris/goeat-api/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/LauraBeatris/goeat-api?style=social">
+  <a href="https://github.com/LauraBeatris/2budget/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/LauraBeatris/2budget?style=social">
   </a>
 </p>
 
